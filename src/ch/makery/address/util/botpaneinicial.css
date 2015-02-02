@@ -1,0 +1,54 @@
+.fundo {
+	-fx-background-color: rgb(255,255,255);
+}
+
+
+
+.botcadastrar {
+	 -fx-background-image: url("../../../../../imgsMenus/inicio/cadastrar.jpg");
+	 -fx-background-color: transparent; 
+}
+.botcadastrar:hover {
+	-fx-background-image: url("../../../../../imgsMenus/inicio/cadastrarhover.jpg");
+}
+.botcadastrar:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/inicio/cadastrarpressed.jpg");
+}
+
+
+.botconsultar {
+	 -fx-background-image: url("../../../../../imgsMenus/inicio/consultar.jpg");
+	 -fx-background-color: transparent; 
+}
+.botconsultar:hover {
+	-fx-background-image: url("../../../../../imgsMenus/inicio/consultarhover.jpg");
+}
+.botconsultar:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/inicio/consultarpressed.jpg");
+}
+
+
+.botregistrar {
+	 -fx-background-image: url("../../../../../imgsMenus/inicio/registrar.jpg");
+	 -fx-background-color: transparent; 
+}
+.botregistrar:hover {
+	-fx-background-image: url("../../../../../imgsMenus/inicio/registrarhover.jpg");
+}
+.botregistrar:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/inicio/registrarpressed.jpg");
+}
+
+
+.botrelatorio {
+	 -fx-background-image: url("../../../../../imgsMenus/inicio/relatorio.jpg");
+	 -fx-background-color: transparent; 
+}
+.botrelatorio:hover {
+	-fx-background-image: url("../../../../../imgsMenus/inicio/relatoriohover.jpg");
+}
+.botrelatorio:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/inicio/relatoriopressed.jpg");
+}
+
+

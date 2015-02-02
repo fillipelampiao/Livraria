@@ -1,0 +1,7 @@
+.fundo {
+  -fx-content-display: top;
+  -fx-border-insets: 5 5 5 5;
+  -fx-border-color: gray;
+  -fx-border-width: 1;
+}
+

@@ -1,0 +1,7 @@
+.titledPane .title {
+	-fx-background-color: linear-gradient( #028DBF , #00CCFF );
+	-fx-border-color	: #000000;
+}
+.titledPane {
+	-fx-base: rgb(255, 255, 255);
+}
