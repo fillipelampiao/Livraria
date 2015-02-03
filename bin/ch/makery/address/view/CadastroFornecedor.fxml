@@ -129,7 +129,7 @@
         </rowConstraints>
          <children>
             <Label text="Grupos:" />
-            <Label text="Grupos do cliente:" GridPane.columnIndex="2" />
+            <Label text="Grupos do fornecedor:" GridPane.columnIndex="2" />
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
