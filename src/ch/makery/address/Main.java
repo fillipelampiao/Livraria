@@ -1,5 +1,7 @@
 package ch.makery.address;
 
+import ch.makery.*;
+
 import java.io.IOException;
 
 import ch.makery.address.Main;
@@ -15,8 +17,8 @@ public class Main extends Application {
 	private BorderPane borde;
 	private Stage stage;
 	
-	private String secundaria = "view/Inicia.fxml";
 	private String primaria = "view/Acordion.fxml";
+	public String secundaria = "view/Inicia.fxml";
 	
 	@Override
 	public void start(Stage stage) {
@@ -45,21 +47,20 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
-	public void iniciaTelas(String primaria){
+	public void iniciaTelas(String secundaria){
 		try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource(secundaria));
             AnchorPane pane = (AnchorPane) loader.load();
-
             borde.setCenter(pane);
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
 	}
 	
 
+	
+	
 	public static void main(String[] args) {
 		launch(args);
 	}

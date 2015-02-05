@@ -4,8 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
+import ch.makery.address.Main;
 
 public class AcordionController {
+	
+	Main main = new Main();
 
     @FXML
     private Button iniciaFuncionariosConsultaButtom;
@@ -60,12 +63,11 @@ public class AcordionController {
 
     @FXML
     void iniciaCadastrar(ActionEvent event) {
-
+    	
     }
-
     @FXML
     void iniciaGruposCadastro(ActionEvent event) {
-
+    	main.iniciaTelas("/view/CadastroGrupos.fxml");
     }
 
     @FXML
