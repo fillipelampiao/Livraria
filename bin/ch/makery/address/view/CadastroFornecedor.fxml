@@ -11,12 +11,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.CadastroFornecedorController">
    <children>
-      <GridPane layoutX="189.0" layoutY="170.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+      <GridPane layoutX="189.0" layoutY="170.0" prefHeight="215.0" prefWidth="460.0" AnchorPane.bottomAnchor="295.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
-          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="53.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="428.0" minWidth="10.0" prefWidth="407.0" />
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="74.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="428.0" minWidth="10.0" prefWidth="386.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -24,11 +24,20 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Nome:">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Nome:" textAlignment="RIGHT">
+               <font>
+                  <Font name="Tw Cen MT" size="14.0" />
+               </font>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="CPF/CNPJ:" textAlignment="RIGHT" GridPane.rowIndex="1">
                <font>
                   <Font name="Tw Cen MT" size="14.0" />
                </font>
@@ -36,7 +45,7 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <Label text="CPF:" GridPane.rowIndex="1">
+            <Label text="Email:" textAlignment="RIGHT" GridPane.rowIndex="2">
                <font>
                   <Font name="Tw Cen MT" size="14.0" />
                </font>
@@ -44,7 +53,7 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <Label text="RG:" GridPane.rowIndex="2">
+            <Label text="Fone:" textAlignment="RIGHT" textFill="RED" GridPane.rowIndex="3">
                <font>
                   <Font name="Tw Cen MT" size="14.0" />
                </font>
@@ -52,7 +61,7 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Fone:" textFill="RED" GridPane.rowIndex="4">
+            <Label text="Outros:" textAlignment="RIGHT" GridPane.rowIndex="4">
                <font>
                   <Font name="Tw Cen MT" size="14.0" />
                </font>
@@ -60,64 +69,30 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Email:" GridPane.rowIndex="3">
-               <font>
-                  <Font name="Tw Cen MT" size="14.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets right="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Outros:" GridPane.rowIndex="5">
-               <font>
-                  <Font name="Tw Cen MT" size="14.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets right="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Cod.:" GridPane.rowIndex="6">
-               <font>
-                  <Font name="Tw Cen MT" size="14.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets right="5.0" />
-               </GridPane.margin>
-            </Label>
-            <TextField promptText="Digite seu nome" GridPane.columnIndex="1" />
-            <TextField prefHeight="22.0" prefWidth="100.0" promptText="Digite seu CPF" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="txtNomeFornecedor" promptText="Digite seu nome" GridPane.columnIndex="1" />
+            <TextField fx:id="txtCpfCnpjFornecedor" prefHeight="22.0" prefWidth="100.0" promptText="Digite seu CPF" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField promptText="Digite seu RG" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtEmailFornecedor" promptText="Digite seu RG" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField prefHeight="22.0" prefWidth="238.0" promptText="Digite seu email" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="txtFoneFornecedor" promptText="Digite seu fone" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets right="290.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtOutrosFornecedor" promptText="Digite seu outros" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets />
-               </GridPane.margin>
-            </TextField>
-            <TextField promptText="Digite seu fone" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <GridPane.margin>
-                  <Insets right="290.0" />
-               </GridPane.margin>
-            </TextField>
-            <TextField promptText="Digite seu outros" GridPane.columnIndex="1" GridPane.rowIndex="5">
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin>
-            </TextField>
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="6">
-               <GridPane.margin>
-                  <Insets right="350.0" />
                </GridPane.margin>
             </TextField>
          </children>
       </GridPane>
-      <GridPane layoutX="109.0" layoutY="332.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="300.0">
+      <GridPane layoutX="109.0" layoutY="332.0" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="250.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="10.0" prefWidth="189.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="7.0" prefWidth="72.0" />
@@ -134,7 +109,7 @@
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
               <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -142,6 +117,9 @@
               </rowConstraints>
                <children>
                   <Button mnemonicParsing="false" text="Button">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
                      <effect>
                         <ImageInput>
                            <source>
@@ -154,6 +132,9 @@
                      </cursor>
                   </Button>
                   <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
                      <effect>
                         <ImageInput>
                            <source>
@@ -171,13 +152,14 @@
       </GridPane>
       <HBox layoutX="323.0" layoutY="475.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Button layoutX="323.0" layoutY="475.0" mnemonicParsing="false" text="Limpar" />
-            <Button layoutX="408.0" layoutY="475.0" mnemonicParsing="false" text="Confirmar">
+            <Button fx:id="buttomLimparFornecedor" layoutX="323.0" layoutY="475.0" mnemonicParsing="false" onAction="#limparFornecedor" text="Limpar" />
+            <Button fx:id="buttomConfirmarFornecedor" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmarFornecedor" text="Confirmar">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
+      <Button fx:id="buttomVoltarInicial" layoutX="27.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltarInicial" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="477.0" />
    </children>
 </AnchorPane>

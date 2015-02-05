@@ -15,7 +15,7 @@
    <left>
       <Accordion prefHeight="480.0" prefWidth="226.0" styleClass="titledPane" stylesheets="@../util/titlepane.css" BorderPane.alignment="CENTER">
          <panes>
-            <TitledPane fx:id="iniciaCadastrarButtom" alignment="TOP_CENTER" depthTest="DISABLE" maxHeight="1.7976931348623157E308" onDragDetected="#iniciaCadastrar" text="Cadastro" textAlignment="CENTER" textFill="WHITE">
+            <TitledPane fx:id="buttomCadastrarAcordion" alignment="TOP_CENTER" depthTest="DISABLE" maxHeight="1.7976931348623157E308" text="Cadastro" textAlignment="CENTER" textFill="WHITE">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -46,7 +46,7 @@
                                     <Insets top="30.0" />
                                  </padding>
                               </Separator>
-                              <Button fx:id="iniciaGruposCadastroButtom" mnemonicParsing="false" onAction="#iniciaGruposCadastro" prefHeight="26.0" prefWidth="121.0" text="Button">
+                              <Button fx:id="buttomGruposCadastroAcordion" mnemonicParsing="false" onAction="#gruposCadastroAcordion" prefHeight="26.0" prefWidth="121.0" text="Button">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -61,7 +61,7 @@
                                     <Insets bottom="5.0" left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button fx:id="iniciaProdutosCadastroButtom" mnemonicParsing="false" onAction="#iniciaProdutosCadastro" prefHeight="26.0" prefWidth="133.0" text="Button" GridPane.rowIndex="1">
+                              <Button fx:id="buttomProdutosCadastroAcordion" mnemonicParsing="false" onAction="#produtosCadastroAcordion" prefHeight="26.0" prefWidth="133.0" text="Button" GridPane.rowIndex="1">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -76,7 +76,7 @@
                                     <Insets bottom="5.0" left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button fx:id="iniciaFornecedoresCadastroButtom" mnemonicParsing="false" onAction="#iniciaFornecedoresCadastro" prefHeight="26.0" prefWidth="135.0" text="Button" GridPane.rowIndex="2">
+                              <Button fx:id="buttomFornecedoresCadastroAcordion" mnemonicParsing="false" onAction="#fornecedoresCadastroAcordion" prefHeight="26.0" prefWidth="135.0" text="Button" GridPane.rowIndex="2">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -91,7 +91,7 @@
                                     <Insets bottom="5.0" left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button fx:id="iniciaClientesCadastroButtom" mnemonicParsing="false" onAction="#iniciaClientesCadastro" prefHeight="26.0" prefWidth="135.0" text="Button" GridPane.rowIndex="3">
+                              <Button fx:id="buttomClientesCadastroAcordion" mnemonicParsing="false" onAction="#clientesCadastroAcordion" prefHeight="26.0" prefWidth="135.0" text="Button" GridPane.rowIndex="3">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -106,7 +106,7 @@
                                     <Insets bottom="5.0" left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button fx:id="iniciaFuncionariosCadastroButtom" mnemonicParsing="false" onAction="#iniciaFuncionariosCadastro" prefHeight="26.0" prefWidth="139.0" text="Button" GridPane.rowIndex="4">
+                              <Button fx:id="buttomFuncionariosCadastroAcordion" mnemonicParsing="false" onAction="#funcionariosCadastroAcordion" prefHeight="26.0" prefWidth="139.0" text="Button" GridPane.rowIndex="4">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -143,7 +143,7 @@
                   <Font name="Tw Cen MT Condensed Extra Bold" size="18.0" />
                </font>
             </TitledPane>
-            <TitledPane fx:id="iniciaVendaButtom" alignment="TOP_CENTER" onDragDetected="#iniciaVenda" text="Vendas" textFill="WHITE">
+            <TitledPane fx:id="buttomVendasAcordion" alignment="TOP_CENTER" text="Vendas" textFill="WHITE">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -164,7 +164,7 @@
                                     <Insets top="30.0" />
                                  </padding>
                               </Separator>
-                              <Button fx:id="iniciaVenderButtom" mnemonicParsing="false" onAction="#iniciaVender" prefHeight="26.0" prefWidth="121.0" text="Button">
+                              <Button fx:id="buttomVenderVendasAcordion" mnemonicParsing="false" onAction="#venderVendasAcordion" prefHeight="26.0" prefWidth="121.0" text="Button">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -179,7 +179,7 @@
                                     <Insets bottom="5.0" left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button fx:id="iniciaPagamentoButtom" mnemonicParsing="false" onAction="#iniciaPagamento" prefHeight="26.0" prefWidth="133.0" text="Button" GridPane.rowIndex="1">
+                              <Button fx:id="buttomPagamentoPagamentoAcordion" mnemonicParsing="false" onAction="#pagamentoPagamentoAcordion" prefHeight="26.0" prefWidth="133.0" text="Button" GridPane.rowIndex="1">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -194,7 +194,7 @@
                                     <Insets bottom="5.0" left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button fx:id="iniciaAlteraVendaButtom" mnemonicParsing="false" onAction="#iniciaAlteraVenda" prefHeight="26.0" prefWidth="135.0" text="Button" GridPane.rowIndex="2">
+                              <Button fx:id="buttomAlteraVendaVendasAcordion" mnemonicParsing="false" onAction="#alteraVendaVendasAcordion" prefHeight="26.0" prefWidth="135.0" text="Button" GridPane.rowIndex="2">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -228,7 +228,7 @@
                   <Font name="Tw Cen MT Condensed Extra Bold" size="18.0" />
                </font>
             </TitledPane>
-            <TitledPane alignment="TOP_CENTER" onDragDetected="#iniciaConsulta" text="Consulta" textFill="WHITE">
+            <TitledPane fx:id="buttomConsultaAcordion" alignment="TOP_CENTER" text="Consulta" textFill="WHITE">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -259,7 +259,7 @@
                                     <Insets top="30.0" />
                                  </padding>
                               </Separator>
-                              <Button fx:id="iniciaGruposConsultaButtom" mnemonicParsing="false" onAction="#iniciaGruposConsulta" prefHeight="26.0" prefWidth="121.0">
+                              <Button fx:id="buttomGruposConsultaAcordion" mnemonicParsing="false" onAction="#gruposConsultaAcordion" prefHeight="26.0" prefWidth="121.0">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -274,7 +274,7 @@
                                     <Insets bottom="5.0" left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button fx:id="iniciaProdutosConsultaButtom" mnemonicParsing="false" onAction="#iniciaProdutosConsulta" prefHeight="26.0" prefWidth="133.0" GridPane.rowIndex="1">
+                              <Button fx:id="buttomProdutosConsultaAcordion" mnemonicParsing="false" onAction="#produtosConsultaAcordion" prefHeight="26.0" prefWidth="133.0" GridPane.rowIndex="1">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -289,7 +289,7 @@
                                     <Insets bottom="5.0" left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button fx:id="iniciaFornecedoresConsultaButtom" mnemonicParsing="false" onAction="#iniciaFornecedoresConsulta" prefHeight="26.0" prefWidth="135.0" GridPane.rowIndex="2">
+                              <Button fx:id="buttomFornecedoresConsultaAcordion" mnemonicParsing="false" onAction="#fornecedoresConsultaAcordion" prefHeight="26.0" prefWidth="135.0" GridPane.rowIndex="2">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -304,7 +304,7 @@
                                     <Insets bottom="5.0" left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button fx:id="iniciaClientesConsultaButtom" mnemonicParsing="false" onAction="#iniciaClientesConsulta" prefHeight="26.0" prefWidth="135.0" GridPane.rowIndex="3">
+                              <Button fx:id="buttomClientesConsultaAcordion" mnemonicParsing="false" onAction="#clientesConsultaAcordion" prefHeight="26.0" prefWidth="135.0" GridPane.rowIndex="3">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -319,7 +319,7 @@
                                     <Insets bottom="5.0" left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button fx:id="iniciaFuncionariosConsultaButtom" mnemonicParsing="false" onAction="#iniciaFuncionariosConsulta" prefHeight="26.0" prefWidth="139.0" GridPane.rowIndex="4">
+                              <Button fx:id="buttomFuncionariosConsultaAcordion" mnemonicParsing="false" onAction="#funcionariosConsultaAcordion" prefHeight="26.0" prefWidth="139.0" GridPane.rowIndex="4">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -353,7 +353,7 @@
                   <Font name="Tw Cen MT Condensed Extra Bold" size="18.0" />
                </font>
             </TitledPane>
-            <TitledPane alignment="TOP_CENTER" onDragDetected="#iniciaRelatorio" text="Relatório" textFill="WHITE">
+            <TitledPane fx:id="buttomRelatorioAcordion" alignment="TOP_CENTER" text="Relatório" textFill="WHITE">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -369,7 +369,7 @@
                                     <Insets top="30.0" />
                                  </padding>
                               </Separator>
-                              <Button fx:id="IniciaVendasRelatorioButtom" mnemonicParsing="false" onAction="#IniciaVendasRelatorio" prefHeight="26.0" prefWidth="121.0">
+                              <Button fx:id="buttomVendasRelatorioAcordion" mnemonicParsing="false" onAction="#vendasRelatorioAcordion" prefHeight="26.0" prefWidth="121.0">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -384,7 +384,7 @@
                                     <Insets bottom="5.0" left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button fx:id="IniciaEstoqueRelatorioButtom" mnemonicParsing="false" onAction="#IniciaEstoqueRelatorio" prefHeight="26.0" prefWidth="133.0" GridPane.rowIndex="1">
+                              <Button fx:id="buttomEstoqueRelatorioAcordion" mnemonicParsing="false" onAction="#estoqueRelatorioAcordion" prefHeight="26.0" prefWidth="133.0" GridPane.rowIndex="1">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>

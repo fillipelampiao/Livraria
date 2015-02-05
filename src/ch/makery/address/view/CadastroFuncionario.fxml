@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.CadastroFuncionarioController">
    <children>
       <GridPane layoutX="189.0" layoutY="170.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
@@ -76,28 +76,28 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <TextField promptText="Digite seu nome" GridPane.columnIndex="1" />
-            <TextField prefHeight="22.0" prefWidth="100.0" promptText="Digite seu CPF" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="txtNomeFuncionario" promptText="Digite seu nome" GridPane.columnIndex="1" />
+            <TextField fx:id="txtSenhaFuncionario" prefHeight="22.0" prefWidth="100.0" promptText="Digite seu CPF" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField promptText="Digite seu RG" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtCpfFuncionario" promptText="Digite seu RG" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField prefHeight="22.0" prefWidth="238.0" promptText="Digite seu email" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="txtRgFuncionario" prefHeight="22.0" prefWidth="238.0" promptText="Digite seu email" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </TextField>
-            <TextField promptText="Digite seu fone" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="txtEmailFuncionario" promptText="Digite seu fone" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField promptText="Digite seu outros" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <TextField fx:id="txtOutrosFuncionario" promptText="Digite seu outros" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -158,13 +158,14 @@
       </GridPane>
       <HBox layoutX="323.0" layoutY="475.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Button layoutX="323.0" layoutY="475.0" mnemonicParsing="false" text="Limpar" />
-            <Button layoutX="408.0" layoutY="475.0" mnemonicParsing="false" text="Confirmar">
+            <Button fx:id="buttomLimparFuncionario" layoutX="323.0" layoutY="475.0" mnemonicParsing="false" onAction="#limparFuncionario" text="Limpar" />
+            <Button fx:id="buttomConfirmarFuncionario" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmarFuncionario" text="Confirmar">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
+      <Button fx:id="buttomVoltarInicial" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltarInicial" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
    </children>
 </AnchorPane>

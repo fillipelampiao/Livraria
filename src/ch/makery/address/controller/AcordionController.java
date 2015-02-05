@@ -1,157 +1,144 @@
 package ch.makery.address.controller;
 
+import ch.makery.address.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
-import ch.makery.address.Main;
 
 public class AcordionController {
 	
 	Main main = new Main();
 
     @FXML
-    private Button iniciaFuncionariosConsultaButtom;
+    private TitledPane buttomConsulta;
 
     @FXML
-    private Button iniciaFornecedoresConsultaButtom;
+    private Button buttomProdutosConsulta;
 
     @FXML
-    private Button IniciaEstoqueRelatorioButtom;
+    private Button buttomFuncionariosConsulta;
 
     @FXML
-    private Button iniciaClientesConsultaButtom;
+    private Button buttomGruposCadastro;
 
     @FXML
-    private Button iniciaPagamentoButtom;
+    private Button buttomClientesCadastro;
 
     @FXML
-    private TitledPane iniciaVendaButtom;
+    private Button buttomFornecedoresConsulta;
 
     @FXML
-    private Button iniciaVenderButtom;
+    private TitledPane buttomRelatorio;
 
     @FXML
-    private Button iniciaClientesCadastroButtom;
+    private Button buttomVendasRelatorio;
 
     @FXML
-    private Button iniciaFuncionariosCadastroButtom;
+    private Button buttomClientesConsulta;
 
     @FXML
-    private Button iniciaAlteraVendaButtom;
+    private Button buttomFornecedoresCadastro;
 
     @FXML
-    private TitledPane iniciaCadastrarButtom;
+    private Button buttomFuncionariosCadastro;
 
     @FXML
-    private Button iniciaProdutosConsultaButtom;
+    private Button buttomPagamentoPagamento;
 
     @FXML
-    private Button iniciaGruposCadastroButtom;
+    private Button buttomGruposConsulta;
 
     @FXML
-    private Button iniciaFornecedoresCadastroButtom;
+    private TitledPane buttomCadastrar;
 
     @FXML
-    private Button iniciaGruposConsultaButtom;
+    private TitledPane buttomVendas;
 
     @FXML
-    private Button iniciaProdutosCadastroButtom;
+    private Button buttomProdutosCadastro;
 
     @FXML
-    private Button IniciaVendasRelatorioButtom;
+    private Button buttomVenderVendas;
 
     @FXML
-    void iniciaCadastrar(ActionEvent event) {
-    	
-    }
-    @FXML
-    void iniciaGruposCadastro(ActionEvent event) {
-    	main.iniciaTelas("/view/CadastroGrupos.fxml");
-    }
+    private Button buttomAlteraVendaVendas;
 
     @FXML
-    void iniciaProdutosCadastro(ActionEvent event) {
+    private Button buttomEstoqueRelatorio;
 
+    @FXML
+    void gruposCadastro(ActionEvent event) {
+    	main.iniciaTelas("view/CadastroGrupos.fxml");
     }
 
     @FXML
-    void iniciaFornecedoresCadastro(ActionEvent event) {
+    void produtosCadastro(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaClientesCadastro(ActionEvent event) {
+    void fornecedoresCadastro(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaFuncionariosCadastro(ActionEvent event) {
+    void clientesCadastro(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaVenda(ActionEvent event) {
+    void funcionariosCadastro(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaVender(ActionEvent event) {
+    void venderVendas(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaPagamento(ActionEvent event) {
+    void pagamentoPagamento(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaAlteraVenda(ActionEvent event) {
+    void alteraVendaVendas(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaConsulta(ActionEvent event) {
+    void gruposConsulta(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaGruposConsulta(ActionEvent event) {
+    void produtosConsulta(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaProdutosConsulta(ActionEvent event) {
+    void fornecedoresConsulta(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaFornecedoresConsulta(ActionEvent event) {
+    void clientesConsulta(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaClientesConsulta(ActionEvent event) {
+    void funcionariosConsulta(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaFuncionariosConsulta(ActionEvent event) {
+    void vendasRelatorio(ActionEvent event) {
 
     }
 
     @FXML
-    void iniciaRelatorio(ActionEvent event) {
-
-    }
-
-    @FXML
-    void IniciaVendasRelatorio(ActionEvent event) {
-
-    }
-
-    @FXML
-    void IniciaEstoqueRelatorio(ActionEvent event) {
+    void estoqueRelatorio(ActionEvent event) {
 
     }
 

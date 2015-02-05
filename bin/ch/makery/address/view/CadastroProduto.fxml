@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.CadastroPodutoController">
    <children>
       <GridPane layoutX="189.0" layoutY="170.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
@@ -75,21 +75,21 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <TextField promptText="Codigo do produto" GridPane.columnIndex="1">
+            <TextField fx:id="txtCodProduto" promptText="Codigo do produto" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin></TextField>
-            <TextField prefHeight="22.0" prefWidth="100.0" promptText="Digite o nome do produto" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="txtNomeProduto" prefHeight="22.0" prefWidth="100.0" promptText="Digite o nome do produto" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </TextField>
-            <TextField prefHeight="22.0" prefWidth="82.0" promptText="Quantidade" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtQuantidadeProduto" prefHeight="22.0" prefWidth="82.0" promptText="Quantidade" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="260.0" />
                </GridPane.margin>
             </TextField>
-            <TextField promptText="outros" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <TextField fx:id="txtOutrosVenda" promptText="outros" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -103,7 +103,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField prefHeight="22.0" prefWidth="109.0" promptText="P. de compra">
+                  <TextField fx:id="txtPrecoCompraProduto" prefHeight="22.0" prefWidth="109.0" promptText="P. de compra">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -111,7 +111,7 @@
                         <Insets />
                      </GridPane.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" text="Alterar" wrapText="true" GridPane.columnIndex="1">
+                  <Button fx:id="buttomAlterarPrecoCompra" mnemonicParsing="false" onAction="#alterarPrecoCompra" text="Alterar" wrapText="true" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
@@ -127,12 +127,12 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" text="Alterar" GridPane.columnIndex="1">
+                  <Button fx:id="buttomAlterarPrecoVenda" mnemonicParsing="false" onAction="#alterarPrecoVenda" text="Alterar" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <TextField promptText="P. de venda" />
+                  <TextField fx:id="txtPrecoVenda" promptText="P. de venda" />
                </children>
             </GridPane>
          </children>
@@ -155,7 +155,7 @@
                <padding>
                   <Insets left="20.0" />
                </padding></Label>
-            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+            <TextArea fx:id="txtDescricaoVendas" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
             <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -165,7 +165,7 @@
                 <RowConstraints maxHeight="74.0" minHeight="0.0" prefHeight="24.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Upload" textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="buttomUploadVendas" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#uploadVendas" text="Upload" textAlignment="CENTER" GridPane.rowIndex="1">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -179,13 +179,14 @@
       </GridPane>
       <HBox layoutX="323.0" layoutY="475.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Button layoutX="323.0" layoutY="475.0" mnemonicParsing="false" text="Limpar" />
-            <Button layoutX="408.0" layoutY="475.0" mnemonicParsing="false" text="Confirmar">
+            <Button fx:id="buttomLimparVendas" layoutX="323.0" layoutY="475.0" mnemonicParsing="false" onAction="#limparVendas" text="Limpar" />
+            <Button fx:id="buttomConfirmarVendas" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmarVendas" text="Confirmar">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
+      <Button fx:id="buttomVoltarInicial" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltarInicial" text="Voltar" />
    </children>
 </AnchorPane>
