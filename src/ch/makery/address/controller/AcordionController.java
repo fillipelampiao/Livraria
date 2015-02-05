@@ -74,22 +74,22 @@ public class AcordionController {
 
     @FXML
     void produtosCadastro(ActionEvent event) {
-
+    	main.iniciaTelas("view/CadastroProduto.fxml");
     }
 
     @FXML
     void fornecedoresCadastro(ActionEvent event) {
-
+    	main.iniciaTelas("view/CadastroFornecedor.fxml");
     }
 
     @FXML
     void clientesCadastro(ActionEvent event) {
-
+    	main.iniciaTelas("view/CadastroCliente.fxml");
     }
 
     @FXML
     void funcionariosCadastro(ActionEvent event) {
-
+    	main.iniciaTelas("view/CadastroFuncionario.fxml");
     }
 
     @FXML

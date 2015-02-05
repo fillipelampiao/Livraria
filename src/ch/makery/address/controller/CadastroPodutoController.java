@@ -1,5 +1,6 @@
 package ch.makery.address.controller;
 
+import ch.makery.address.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -7,6 +8,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class CadastroPodutoController {
+	
+	Main main = new Main();
 
     @FXML
     private TextField txtNomeProduto;
@@ -74,7 +77,7 @@ public class CadastroPodutoController {
 
     @FXML
     void voltarInicial(ActionEvent event) {
-
+    	main.iniciaTelas("view/Inicia.fxml");
     }
 
 }

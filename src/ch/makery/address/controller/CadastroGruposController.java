@@ -1,5 +1,6 @@
 package ch.makery.address.controller;
 
+import ch.makery.address.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -7,6 +8,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 public class CadastroGruposController {
+	
+	Main main = new Main();
 
     @FXML
     private Button confirmarGrupos;
@@ -38,7 +41,7 @@ public class CadastroGruposController {
 
     @FXML
     void voltarInicial(ActionEvent event) {
-
+    	main.iniciaTelas("view/Inicia.fxml");
     }
 
 }
