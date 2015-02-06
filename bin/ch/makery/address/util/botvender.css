@@ -1,0 +1,41 @@
+.fundo {
+	-fx-background-color: rgb(255,255,255);
+}
+
+.botvender {
+	 -fx-background-image: url("../../../../../imgsMenus/vendas/vender.jpg");
+	 -fx-background-color: transparent; 
+}
+.botvender:hover {
+	-fx-background-image: url("../../../../../imgsMenus/vendas/venderhover.jpg");
+}
+.botvender:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/vendas/venderpressed.jpg");
+}
+
+
+.botpagamento {
+	 -fx-background-image: url("../../../../../imgsMenus/vendas/pagamento.jpg");
+	 -fx-background-color: transparent; 
+}
+.botpagamento:hover {
+	-fx-background-image: url("../../../../../imgsMenus/vendas/pagamentohover.jpg");
+}
+.botpagamento:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/vendas/pagamentopressed.jpg");
+}
+
+
+.botalterarvendas {
+	 -fx-background-image: url("../../../../../imgsMenus/vendas/alterarvenda.jpg");
+	 -fx-background-color: transparent; 
+}
+.botalterarvendas:hover {
+	-fx-background-image: url("../../../../../imgsMenus/vendas/alterarvendahover.jpg");
+}
+.botalterarvendas:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/vendas/alterarvendapressed.jpg");
+}
+
+
+
