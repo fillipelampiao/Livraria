@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="706.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.PagamentoVenderController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.PagamentoVenderController">
    <children>
       <Button fx:id="buttomVoltarInicial" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltarInicial" text="Voltar" />
       <HBox layoutX="342.0" layoutY="477.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
@@ -25,8 +25,8 @@
         </columnConstraints>
         <rowConstraints>
             <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="324.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="441.0" minHeight="10.0" prefHeight="441.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="324.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="441.0" minHeight="10.0" prefHeight="358.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <GridPane prefHeight="59.0" prefWidth="456.0">
@@ -54,14 +54,14 @@
             </GridPane>
             <GridPane GridPane.rowIndex="1">
               <columnConstraints>
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="86.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="513.0" minWidth="10.0" prefWidth="513.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="95.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="513.0" minWidth="10.0" prefWidth="361.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField fx:id="txtCliente" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtCliente" prefHeight="22.0" prefWidth="410.0" GridPane.columnIndex="1" />
                   <Label text="Cliente:">
                      <GridPane.margin>
                         <Insets right="5.0" />
@@ -72,10 +72,10 @@
             <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
               <columns>
                 <TableColumn fx:id="nuVenda" prefWidth="87.0" text="Nº venda" />
-                  <TableColumn fx:id="data" prefWidth="166.0" text="Data" />
-                  <TableColumn fx:id="produto" prefWidth="164.0" text="Produtos" />
-                  <TableColumn fx:id="total" prefWidth="140.0" text="V. Total" />
-                  <TableColumn fx:id="debito" prefWidth="104.0" text="Débito" />
+                  <TableColumn fx:id="data" prefWidth="95.0" text="Data" />
+                  <TableColumn fx:id="produto" prefWidth="118.0" text="Produtos" />
+                  <TableColumn fx:id="total" prefWidth="82.0" text="V. Total" />
+                  <TableColumn fx:id="debito" prefWidth="72.0" text="Débito" />
               </columns>
             </TableView>
          </children>

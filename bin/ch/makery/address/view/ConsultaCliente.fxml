@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="737.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.ConsultaClienteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.ConsultaClienteController">
    <children>
       <GridPane layoutX="24.0" layoutY="130.0" prefHeight="340.0" prefWidth="478.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
@@ -61,12 +61,12 @@
             </GridPane>
          </children>
       </GridPane>
-      <HBox layoutX="587.0" layoutY="554.0" spacing="20.0">
+      <HBox layoutX="587.0" layoutY="554.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
             <Button fx:id="buttomEditar" layoutX="587.0" layoutY="554.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
             <Button fx:id="buttomExcluir" layoutX="658.0" layoutY="554.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
          </children>
       </HBox>
-      <Button fx:id="butomVoltar" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button fx:id="butomVoltar" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
    </children>
 </AnchorPane>

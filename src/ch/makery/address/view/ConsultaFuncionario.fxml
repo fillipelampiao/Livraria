@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="737.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.ConsultaFuncionarioController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.ConsultaFuncionarioController">
    <children>
       <GridPane layoutX="24.0" layoutY="130.0" prefHeight="340.0" prefWidth="478.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
@@ -27,13 +27,13 @@
          <children>
             <TableView prefHeight="365.0" prefWidth="478.0" GridPane.rowIndex="1">
               <columns>
-                <TableColumn fx:id="cod" prefWidth="52.0" text="Cod." />
-                <TableColumn fx:id="nome" prefWidth="162.0" text="Nome" />
-                  <TableColumn fx:id="senha" prefWidth="136.0" text="Senha" />
-                  <TableColumn fx:id="cpf" minWidth="0.0" prefWidth="98.0" text="CPF" />
-                  <TableColumn fx:id="rg" prefWidth="92.0" text="RG" />
-                  <TableColumn fx:id="email" prefWidth="95.0" text="Email" />
-                  <TableColumn fx:id="grupo" prefWidth="79.0" text="Grupo" />
+                <TableColumn fx:id="cod" prefWidth="39.0" text="Cod." />
+                <TableColumn fx:id="nome" prefWidth="84.0" text="Nome" />
+                  <TableColumn fx:id="senha" prefWidth="108.0" text="Senha" />
+                  <TableColumn fx:id="cpf" minWidth="0.0" prefWidth="88.0" text="CPF" />
+                  <TableColumn fx:id="rg" prefWidth="72.0" text="RG" />
+                  <TableColumn fx:id="email" prefWidth="87.0" text="Email" />
+                  <TableColumn fx:id="grupo" prefWidth="236.0" text="Grupo" />
               </columns>
             </TableView>
             <GridPane prefHeight="53.0" prefWidth="478.0">
@@ -61,12 +61,12 @@
             </GridPane>
          </children>
       </GridPane>
-      <HBox layoutX="587.0" layoutY="554.0" spacing="20.0">
+      <HBox layoutX="587.0" layoutY="554.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
             <Button fx:id="buttomEditar" layoutX="587.0" layoutY="554.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
             <Button fx:id="buttomExcluir" layoutX="658.0" layoutY="554.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
          </children>
       </HBox>
-      <Button fx:id="butomVoltar" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button fx:id="butomVoltar" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
    </children>
 </AnchorPane>

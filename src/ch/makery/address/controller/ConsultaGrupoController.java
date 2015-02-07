@@ -1,10 +1,13 @@
 package ch.makery.address.controller;
 
+import ch.makery.address.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class ConsultaGrupoController {
+	
+	Main main = new Main();
 
     @FXML
     private Button buttomFornecedor;
@@ -17,12 +20,12 @@ public class ConsultaGrupoController {
 
     @FXML
     void fornecedor(ActionEvent event) {
-
+    	main.iniciaTelas("view/ConsultaGrupoFornecedor.fxml");
     }
 
     @FXML
     void cliente(ActionEvent event) {
-
+    	main.iniciaTelas("view/ConsultaGrupoCliente.fxml");
     }
 
     @FXML

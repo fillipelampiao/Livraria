@@ -11,8 +11,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	private static BorderPane borde;
-	private Stage stage;
+	static BorderPane borde;
+	static Stage stage;
 	
 	private String primaria = "view/Acordion.fxml";
 	private String secundaria = "view/Inicia.fxml";
@@ -50,7 +50,7 @@ public class Main extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource(secundaria));
             AnchorPane pane = (AnchorPane) loader.load();
-            
+           
             borde.setCenter(pane);
         } catch (IOException e) {
             e.printStackTrace();
