@@ -1,5 +1,5 @@
 package ch.makery.address.controller;
 
-public class SubAlterarVenderController {
+public class VerNumeroCompra {
 
 }

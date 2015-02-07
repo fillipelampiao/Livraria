@@ -1,4 +1,4 @@
-package PagamentoVender;
+package ch.makery.address.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

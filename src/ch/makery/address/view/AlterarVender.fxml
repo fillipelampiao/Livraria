@@ -27,14 +27,15 @@
         <rowConstraints>
             <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="324.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="369.0" minHeight="10.0" prefHeight="350.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="324.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="369.0" minHeight="10.0" prefHeight="320.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <GridPane prefHeight="59.0" prefWidth="456.0">
               <columnConstraints>
                   <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="96.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="73.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.0" minWidth="10.0" prefWidth="286.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="65.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.0" minWidth="10.0" prefWidth="294.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -55,8 +56,8 @@
             </GridPane>
             <GridPane GridPane.rowIndex="1">
               <columnConstraints>
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="98.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="358.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="97.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="359.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -70,15 +71,41 @@
                   </Label>
                </children>
             </GridPane>
-            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
               <columns>
-                <TableColumn fx:id="tabData" prefWidth="63.0" text="Nº Venda" />
-                  <TableColumn fx:id="tabQuantidade" prefWidth="104.0" text="Data" />
                   <TableColumn fx:id="tabProduto" prefWidth="82.0" text="Quantidade" />
-                <TableColumn fx:id="tabNuVenda" prefWidth="108.0" resizable="false" text="Produto" />
-                  <TableColumn fx:id="tabTotal" prefWidth="98.0" text="V. Total" />
+                <TableColumn fx:id="tabNuVenda" prefWidth="237.0" resizable="false" text="Produto" />
+                  <TableColumn fx:id="tabTotal" prefWidth="67.0" text="V. Unitario" />
+                  <TableColumn fx:id="tabProduto1" prefWidth="69.0" text="V. TOTAL" />
               </columns>
             </TableView>
+            <GridPane GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="99.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="65.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="69.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="46.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="178.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Nº da compra:">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField GridPane.columnIndex="1" />
+                  <Button mnemonicParsing="false" text="Ver" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label text="Data:" GridPane.columnIndex="3" />
+                  <Label text="MOSTRAR DATA DA COMPRA" GridPane.columnIndex="4" />
+               </children>
+            </GridPane>
          </children>
       </GridPane>
    </children>
