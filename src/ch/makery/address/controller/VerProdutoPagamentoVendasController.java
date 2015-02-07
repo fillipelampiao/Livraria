@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 
-public class VerProdutoPagamentoVendas {
+public class VerProdutoPagamentoVendasController {
 
     @FXML
     private TableColumn<?, ?> produto;
