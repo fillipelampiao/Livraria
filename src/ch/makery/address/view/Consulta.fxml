@@ -26,16 +26,16 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="buttomGrupos" mnemonicParsing="false" onAction="#grupos" prefHeight="68.0" prefWidth="185.0" styleClass="botgrupo" stylesheets="@../util/botcadastrar.css">
+            <Button fx:id="buttomGrupos" mnemonicParsing="false" onAction="#grupos" prefHeight="68.0" prefWidth="185.0" styleClass="botgrupo" stylesheets="@../util/botpaneconsultar.css">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="buttomFornecedores" mnemonicParsing="false" onAction="#fornecedores" prefHeight="68.0" prefWidth="185.0" styleClass="botfornecedor" stylesheets="@../util/botcadastrar.css" GridPane.rowIndex="2">
+            <Button fx:id="buttomFornecedores" mnemonicParsing="false" onAction="#fornecedores" prefHeight="68.0" prefWidth="185.0" styleClass="botfornecedor" stylesheets="@../util/botpaneconsultar.css" GridPane.rowIndex="2">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="buttomProdutos" mnemonicParsing="false" onAction="#produtos" prefHeight="68.0" prefWidth="185.0" styleClass="botproduto" stylesheets="@../util/botcadastrar.css" GridPane.rowIndex="1">
+            <Button fx:id="buttomProdutos" mnemonicParsing="false" onAction="#produtos" prefHeight="68.0" prefWidth="185.0" styleClass="botproduto" stylesheets="@../util/botpaneconsultar.css" GridPane.rowIndex="1">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
@@ -50,11 +50,11 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="buttomClientes" mnemonicParsing="false" onAction="#clientes" prefHeight="68.0" prefWidth="185.0" styleClass="botcliente" stylesheets="@../util/botcadastrar.css">
+            <Button fx:id="buttomClientes" mnemonicParsing="false" onAction="#clientes" prefHeight="68.0" prefWidth="185.0" styleClass="botcliente" stylesheets="@../util/botpaneconsultar.css">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="buttomFuncionarios" mnemonicParsing="false" onAction="#funcionarios" prefHeight="69.0" prefWidth="184.0" styleClass="botfuncionario" stylesheets="@../util/botcadastrar.css" GridPane.rowIndex="1">
+            <Button fx:id="buttomFuncionarios" mnemonicParsing="false" onAction="#funcionarios" prefHeight="69.0" prefWidth="184.0" styleClass="botfuncionario" stylesheets="@../util/botpaneconsultar.css" GridPane.rowIndex="1">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
@@ -74,7 +74,7 @@
       </Button>
    </children>
    <stylesheets>
-      <URL value="@../util/botpaneinicial.css" />
+      <URL value="@../util/botpaneconsultar.css" />
       <URL value="@../util/groupbox.css" />
    </stylesheets>
 </AnchorPane>

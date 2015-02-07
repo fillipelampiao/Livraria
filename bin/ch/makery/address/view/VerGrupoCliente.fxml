@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.VerGrupoClienteController">
+   <children>
+      <TableView layoutX="20.0" layoutY="14.0" prefHeight="445.0" prefWidth="465.0">
+        <columns>
+          <TableColumn fx:id="cod" prefWidth="75.0" text="Cod." />
+          <TableColumn fx:id="nome" prefWidth="389.0" text="Nome" />
+        </columns>
+      </TableView>
+      <Button fx:id="buttomFechar" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
+      <Button fx:id="buttomConfirmar" mnemonicParsing="false" onAction="#confirmar" prefHeight="22.0" prefWidth="77.0" text="Confirmar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.VenderController">
+   <children>
+      <GridPane layoutX="24.0" layoutY="102.0" prefHeight="291.0" prefWidth="419.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="140.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="buttomVender" mnemonicParsing="false" onAction="#vender" prefHeight="68.0" prefWidth="185.0" styleClass="botvenda" stylesheets="@../util/botrelatorio.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="buttomPagamento" mnemonicParsing="false" onAction="#pagamento" prefHeight="70.0" prefWidth="197.0" styleClass="botestoque" stylesheets="@../util/botrelatorio.css" GridPane.columnIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+      <Button fx:id="buttomLogoff" layoutX="404.0" layoutY="33.0" mnemonicParsing="false" onAction="#logoff" prefHeight="22.0" prefWidth="82.0" text="Button" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="file:/C:/Users/Fillipe/workspace/Livraria/imgsMenus/util/logoff.jpg" />
+               </source>
+            </ImageInput>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@../util/botpaneinicial.css" />
+      <URL value="@../util/groupbox.css" />
+   </stylesheets>
+</AnchorPane>

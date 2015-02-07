@@ -1,0 +1,27 @@
+.fundo {
+	-fx-background-color: rgb(255,255,255);
+}
+
+.botvenda {
+	 -fx-background-image: url("../../../../../imgsMenus/relatorio/vendas.jpg");
+	 -fx-background-color: transparent; 
+}
+.botvenda:hover {
+	-fx-background-image: url("../../../../../imgsMenus/relatorio/vendashover.jpg");
+}
+.botvenda:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/relatorio/vendaspressed.jpg");
+}
+
+
+.botestoque {
+	 -fx-background-image: url("../../../../../imgsMenus/relatorio/estoque.jpg");
+	 -fx-background-color: transparent; 
+}
+.botestoque:hover {
+	-fx-background-image: url("../../../../../imgsMenus/relatorio/estoquehover.jpg");
+}
+.botestoque:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/relatorio/estoquepressed.jpg");
+}
+

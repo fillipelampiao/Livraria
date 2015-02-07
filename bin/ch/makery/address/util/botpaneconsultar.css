@@ -1,0 +1,64 @@
+.fundo {
+	-fx-background-color: rgb(255,255,255);
+}
+
+
+.botgrupo {
+	 -fx-background-image: url("../../../../../imgsMenus/cadastrar/grupo.jpg");
+	 -fx-background-color: transparent; 
+}
+.botgrupo:hover {
+	-fx-background-image: url("../../../../../imgsMenus/cadastrar/grupohover.jpg");
+}
+.botgrupo:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/cadastrar/grupopressed.jpg");
+}
+
+
+.botproduto {
+	 -fx-background-image: url("../../../../../imgsMenus/cadastrar/produtos.jpg");
+	 -fx-background-color: transparent; 
+}
+.botproduto:hover {
+	-fx-background-image: url("../../../../../imgsMenus/cadastrar/produtoshover.jpg");
+}
+.botproduto:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/cadastrar/produtospressed.jpg");
+}
+
+
+.botfornecedor {
+	 -fx-background-image: url("../../../../../imgsMenus/cadastrar/fornecedor.jpg");
+	 -fx-background-color: transparent; 
+}
+.botfornecedor:hover {
+	-fx-background-image: url("../../../../../imgsMenus/cadastrar/fornecedorhover.jpg");
+}
+.botfornecedor:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/cadastrar/fornecedorpressed.jpg");
+}
+
+
+.botcliente {
+	 -fx-background-image: url("../../../../../imgsMenus/cadastrar/cliente.jpg");
+	 -fx-background-color: transparent; 
+}
+.botcliente:hover {
+	-fx-background-image: url("../../../../../imgsMenus/cadastrar/clientehover.jpg");
+}
+.botcliente:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/cadastrar/clientepressed.jpg");
+}
+
+
+
+.botfuncionario {
+	 -fx-background-image: url("../../../../../imgsMenus/cadastrar/funcionario.jpg");
+	 -fx-background-color: transparent; 
+}
+.botfuncionario:hover {
+	-fx-background-image: url("../../../../../imgsMenus/cadastrar/funcionariohover.jpg");
+}
+.botfuncionario:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/cadastrar/funcionariopressed.jpg");
+}

@@ -1,0 +1,31 @@
+.fundo {
+	-fx-background-color: rgb(255,255,255);
+}
+
+.botcliente {
+	 -fx-background-image: url("../../../../../imgsMenus/consultar/cliente.jpg");
+	 -fx-background-color: transparent; 
+}
+.botcliente:hover {
+	-fx-background-image: url("../../../../../imgsMenus/consultar/clientehover.jpg");
+}
+.botcliente:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/consultar/clientepressed.jpg");
+}
+
+
+.botfornecedor {
+	 -fx-background-image: url("../../../../../imgsMenus/consultar/fornecedor.jpg");
+	 -fx-background-color: transparent; 
+}
+.botfornecedor:hover {
+	-fx-background-image: url("../../../../../imgsMenus/consultar/fornecedorhover.jpg");
+}
+.botfornecedor:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/consultar/fornecedorpressed.jpg");
+}
+
+
+
+
+
