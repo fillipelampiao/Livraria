@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class Consulta {
+public class ConsultaController {
 
     @FXML
     private Button buttomProdutos;

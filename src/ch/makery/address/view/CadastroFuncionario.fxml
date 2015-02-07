@@ -28,7 +28,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Nome:" textFill="RED">
+            <Label text="Nome:">
                <font>
                   <Font name="Tw Cen MT" size="14.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Senha" textFill="RED" GridPane.rowIndex="1">
+            <Label text="Senha" GridPane.rowIndex="1">
                <font>
                   <Font name="Tw Cen MT" size="14.0" />
                </font>
@@ -44,7 +44,7 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <Label text="CPF:" textFill="RED" GridPane.rowIndex="2">
+            <Label text="CPF:" GridPane.rowIndex="2">
                <font>
                   <Font name="Tw Cen MT" size="14.0" />
                </font>
@@ -52,7 +52,7 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Email:" textFill="RED" GridPane.rowIndex="4">
+            <Label text="Email:" GridPane.rowIndex="4">
                <font>
                   <Font name="Tw Cen MT" size="14.0" />
                </font>
@@ -76,28 +76,28 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="txtNomeFuncionario" promptText="Digite seu nome" GridPane.columnIndex="1" />
-            <TextField fx:id="txtSenhaFuncionario" prefHeight="22.0" prefWidth="100.0" promptText="Digite seu CPF" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="txtNome" promptText="Digite seu nome" GridPane.columnIndex="1" />
+            <TextField fx:id="txtSenha" prefHeight="22.0" prefWidth="100.0" promptText="Digite seu CPF" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="txtCpfFuncionario" promptText="Digite seu RG" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtCpf" promptText="Digite seu RG" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="txtRgFuncionario" prefHeight="22.0" prefWidth="238.0" promptText="Digite seu email" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="txtRg" prefHeight="22.0" prefWidth="238.0" promptText="Digite seu email" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="txtEmailFuncionario" promptText="Digite seu fone" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="txtEmail" promptText="Digite seu fone" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="txtOutrosFuncionario" promptText="Digite seu outros" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <TextField fx:id="txtOutros" promptText="Digite seu outros" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -128,7 +128,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" text="Button">
+                  <Button fx:id="buttomIrGrupo" mnemonicParsing="false" onAction="#irGrupo" text="Button">
                      <effect>
                         <ImageInput>
                            <source>
@@ -140,7 +140,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1">
+                  <Button fx:id="buttomVoltarGrupo" mnemonicParsing="false" onAction="#voltarGrupo" text="Button" GridPane.rowIndex="1">
                      <effect>
                         <ImageInput>
                            <source>
@@ -158,14 +158,14 @@
       </GridPane>
       <HBox layoutX="323.0" layoutY="475.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Button fx:id="buttomLimparFuncionario" layoutX="323.0" layoutY="475.0" mnemonicParsing="false" onAction="#limparFuncionario" text="Limpar" />
-            <Button fx:id="buttomConfirmarFuncionario" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmarFuncionario" text="Confirmar">
+            <Button fx:id="buttomLimpar" layoutX="323.0" layoutY="475.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+            <Button fx:id="buttomConfirmar" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmar" text="Confirmar">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <Button fx:id="buttomVoltarInicial" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltarInicial" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
+      <Button fx:id="buttomVoltar" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
    </children>
 </AnchorPane>

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="281.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.EditarAlterarVender">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="281.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.EditarAlterarVenderController">
    <children>
       <GridPane layoutX="61.0" layoutY="66.0" prefHeight="136.0" prefWidth="281.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -49,8 +49,8 @@
       </GridPane>
       <HBox layoutX="106.0" layoutY="145.0" spacing="20.0">
          <children>
-            <Button fx:id="buttomCancelarAlteracao" layoutX="129.0" layoutY="112.0" mnemonicParsing="false" onAction="#cancelarAlteracao" text="Cancelar" />
-            <Button fx:id="buttomConfirmaAlteracao" layoutX="194.0" layoutY="112.0" mnemonicParsing="false" onAction="#confirmaAlteracao" text="Confirmar" />
+            <Button fx:id="buttomCancelar" layoutX="129.0" layoutY="112.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+            <Button fx:id="buttomConfirma" layoutX="194.0" layoutY="112.0" mnemonicParsing="false" onAction="#confirma" text="Confirmar" />
          </children>
       </HBox>
    </children>

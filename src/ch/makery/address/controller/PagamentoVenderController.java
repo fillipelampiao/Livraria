@@ -12,25 +12,25 @@ public class PagamentoVenderController {
     private TextField txtCodCliente;
 
     @FXML
-    private TableColumn<?, ?> tabNuVenda;
+    private TableColumn<?, ?> debito;
 
     @FXML
-    private TableColumn<?, ?> tabData;
+    private TableColumn<?, ?> total;
 
     @FXML
-    private Button buttomConfirmarVendas;
+    private TableColumn<?, ?> data;
 
     @FXML
-    private TableColumn<?, ?> tabDebito;
+    private TableColumn<?, ?> produto;
 
     @FXML
-    private Button buttomLimparVendas;
+    private Button buttomPagar;
 
     @FXML
-    private TableColumn<?, ?> tabProduto;
+    private Button buttomLimpar;
 
     @FXML
-    private TableColumn<?, ?> tabTotal;
+    private TableColumn<?, ?> nuVenda;
 
     @FXML
     private Button buttomVerCodCliente;
@@ -42,20 +42,17 @@ public class PagamentoVenderController {
     private Button buttomVoltarInicial;
 
     @FXML
-    private TableColumn<?, ?> tabQuantidade;
-
-    @FXML
     void voltarInicial(ActionEvent event) {
 
     }
 
     @FXML
-    void limparVendas(ActionEvent event) {
+    void limpar(ActionEvent event) {
 
     }
 
     @FXML
-    void confirmarVendas(ActionEvent event) {
+    void pagar(ActionEvent event) {
 
     }
 

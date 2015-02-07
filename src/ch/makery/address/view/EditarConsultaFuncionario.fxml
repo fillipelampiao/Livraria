@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="569.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.EditarConsultaFuncionario">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="569.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.EditarConsultaFuncionarioController">
    <children>
       <Button fx:id="butomVoltar" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
       <Button fx:id="buttomExcluir" layoutX="647.0" layoutY="554.0" mnemonicParsing="false" onAction="#excluir" text="Confirmar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
@@ -117,8 +117,8 @@
                         <Insets right="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="txtEmail1" prefHeight="22.0" prefWidth="255.0" GridPane.columnIndex="1" />
-                  <Button mnemonicParsing="false" text="Selecionar" GridPane.columnIndex="2">
+                  <TextField fx:id="txtGrupo" prefHeight="22.0" prefWidth="255.0" GridPane.columnIndex="1" />
+                  <Button fx:id="buttomSelecionar" mnemonicParsing="false" onAction="#selecionar" text="Selecionar" GridPane.columnIndex="2">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>

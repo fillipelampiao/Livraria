@@ -75,7 +75,7 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="txtNomeCliente" prefHeight="22.0" prefWidth="82.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtNome" prefHeight="22.0" prefWidth="82.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -185,14 +185,14 @@
       </GridPane>
       <HBox layoutX="323.0" layoutY="475.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Button fx:id="buttomConfirmarVendas" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmarVendas" text="Confirmar">
+            <Button fx:id="buttomConfirmar" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmar" text="Confirmar">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <Button fx:id="buttomVoltarInicial" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltarInicial" text="Voltar" />
+      <Button fx:id="buttomVoltar" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
       <GridPane layoutX="44.0" layoutY="234.0" prefHeight="218.0" prefWidth="442.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="233.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -211,12 +211,12 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="buttomLimparVenda" mnemonicParsing="false" text="Limpar" GridPane.columnIndex="1">
+                  <Button fx:id="buttomLimparVenda" mnemonicParsing="false" onAction="#limparVenda" text="Limpar" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </Button>
-                  <Button fx:id="buttomIncluirVenda" mnemonicParsing="false" text="Incluir">
+                  <Button fx:id="buttomIncluirVenda" mnemonicParsing="false" onAction="#incluirVenda" text="Incluir">
                      <GridPane.margin>
                         <Insets left="150.0" />
                      </GridPane.margin></Button>
@@ -224,11 +224,11 @@
             </GridPane>
             <TableView fx:id="tabelaProdutos" prefHeight="185.0" prefWidth="444.0" GridPane.rowIndex="1">
               <columns>
-                <TableColumn fx:id="tabelaCod" prefWidth="53.0" text="Cod." />
-                <TableColumn fx:id="tabDescricao" prefWidth="195.0" text="Descriçao" />
-                  <TableColumn fx:id="tabQuantidade" prefWidth="76.0" text="Quantidade" />
-                  <TableColumn fx:id="tabUnitario" prefWidth="61.0" text="V. unitario" />
-                  <TableColumn fx:id="tabTotal" prefWidth="64.0" text="V. total" />
+                <TableColumn fx:id="cod" prefWidth="53.0" text="Cod." />
+                <TableColumn fx:id="descricao" prefWidth="195.0" text="Descriçao" />
+                  <TableColumn fx:id="quantidade" prefWidth="76.0" text="Quantidade" />
+                  <TableColumn fx:id="unitario" prefWidth="61.0" text="V. unitario" />
+                  <TableColumn fx:id="total" prefWidth="64.0" text="V. total" />
               </columns>
             </TableView>
          </children>
@@ -236,7 +236,7 @@
       <HBox layoutX="364.0" layoutY="457.0" spacing="10.0">
          <children>
             <Label text="Preço total:" />
-            <Label text="PRECO" />
+            <Label fx:id="preçoTotal" text="PRECO" />
          </children>
       </HBox>
    </children>

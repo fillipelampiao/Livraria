@@ -69,23 +69,23 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="txtNomeFornecedor" promptText="Digite seu nome" GridPane.columnIndex="1" />
-            <TextField fx:id="txtCpfCnpjFornecedor" prefHeight="22.0" prefWidth="100.0" promptText="Digite seu CPF" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="txtNome" promptText="Digite seu nome" GridPane.columnIndex="1" />
+            <TextField fx:id="txtCpfCnpj" prefHeight="22.0" prefWidth="100.0" promptText="Digite seu CPF" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="txtEmailFornecedor" promptText="Digite seu RG" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtEmail" promptText="Digite seu RG" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="txtFoneFornecedor" promptText="Digite seu fone" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="txtFone" promptText="Digite seu fone" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="txtOutrosFornecedor" promptText="Digite seu outros" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="txtOutros" promptText="Digite seu outros" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -116,7 +116,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" text="Button">
+                  <Button fx:id="buttomIrGrupo" mnemonicParsing="false" onAction="#irGrupo" text="Button">
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
@@ -131,7 +131,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1">
+                  <Button fx:id="buttomVoltarGrupo" mnemonicParsing="false" onAction="#voltarGrupo" text="Button" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
@@ -152,14 +152,14 @@
       </GridPane>
       <HBox layoutX="323.0" layoutY="475.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Button fx:id="buttomLimparFornecedor" layoutX="323.0" layoutY="475.0" mnemonicParsing="false" onAction="#limparFornecedor" text="Limpar" />
-            <Button fx:id="buttomConfirmarFornecedor" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmarFornecedor" text="Confirmar">
+            <Button fx:id="buttomLimpar" layoutX="323.0" layoutY="475.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+            <Button fx:id="buttomConfirmar" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmar" text="Confirmar">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <Button fx:id="buttomVoltarInicial" layoutX="27.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltarInicial" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="477.0" />
+      <Button fx:id="buttomVoltar" layoutX="27.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="477.0" />
    </children>
 </AnchorPane>

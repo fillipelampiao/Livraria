@@ -3,34 +3,29 @@ package ch.makery.address.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 
 public class AlterarVenderController {
 
     @FXML
-    private TextField txtCodCliente;
+    private TextField txtNumeroCompra;
 
     @FXML
-    private TableColumn<?, ?> tabData;
+    private Button buttomVerNumeroCompra;
 
     @FXML
-    private TableColumn<?, ?> tabNuVenda;
-
-    @FXML
-    private Button buttomConfirmarVendas;
-
-    @FXML
-    private Button buttomExcluir;
+    private Label data;
 
     @FXML
     private Button buttomEditar;
 
     @FXML
-    private TableColumn<?, ?> tabProduto;
+    private Button buttomVoltar;
 
     @FXML
-    private TableColumn<?, ?> tabTotal;
+    private Button buttomConfirmar;
 
     @FXML
     private Button buttomVerCodCliente;
@@ -39,13 +34,25 @@ public class AlterarVenderController {
     private TextField txtCliente;
 
     @FXML
-    private Button buttomVoltarInicial;
+    private TableColumn<?, ?> unitario;
 
     @FXML
-    private TableColumn<?, ?> tabQuantidade;
+    private TextField txtCodCliente;
 
     @FXML
-    void voltarInicial(ActionEvent event) {
+    private TableColumn<?, ?> total;
+
+    @FXML
+    private TableColumn<?, ?> produto;
+
+    @FXML
+    private Button buttomExcluir;
+
+    @FXML
+    private TableColumn<?, ?> quantidade;
+
+    @FXML
+    void voltar(ActionEvent event) {
 
     }
 
@@ -66,6 +73,11 @@ public class AlterarVenderController {
 
     @FXML
     void verCodCliente(ActionEvent event) {
+
+    }
+
+    @FXML
+    void verNumeroCompra(ActionEvent event) {
 
     }
 

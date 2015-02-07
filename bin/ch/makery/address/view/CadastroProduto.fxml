@@ -75,21 +75,21 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="txtCodProduto" promptText="Codigo do produto" GridPane.columnIndex="1">
+            <TextField fx:id="txtCod" promptText="Codigo do produto" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets right="290.0" />
                </GridPane.margin></TextField>
-            <TextField fx:id="txtNomeProduto" prefHeight="22.0" prefWidth="100.0" promptText="Digite o nome do produto" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="txtNome" prefHeight="22.0" prefWidth="100.0" promptText="Digite o nome do produto" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="txtQuantidadeProduto" prefHeight="22.0" prefWidth="82.0" promptText="Quantidade" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtQuantidade" prefHeight="22.0" prefWidth="82.0" promptText="Quantidade" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="260.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="txtOutrosVenda" promptText="outros" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <TextField fx:id="txtOutros" promptText="outros" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -103,7 +103,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField fx:id="txtPrecoCompraProduto" prefHeight="22.0" prefWidth="109.0" promptText="P. de compra">
+                  <TextField fx:id="txtPrecoCompra" prefHeight="22.0" prefWidth="109.0" promptText="P. de compra">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -179,14 +179,14 @@
       </GridPane>
       <HBox layoutX="323.0" layoutY="475.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Button fx:id="buttomLimparVendas" layoutX="323.0" layoutY="475.0" mnemonicParsing="false" onAction="#limparVendas" text="Limpar" />
-            <Button fx:id="buttomConfirmarVendas" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmarVendas" text="Confirmar">
+            <Button fx:id="buttomLimpar" layoutX="323.0" layoutY="475.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+            <Button fx:id="buttomConfirmar" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmar" text="Confirmar">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <Button fx:id="buttomVoltarInicial" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltarInicial" text="Voltar" />
+      <Button fx:id="buttomVoltar" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
    </children>
 </AnchorPane>

@@ -1,7 +1,5 @@
 package ch.makery.address.controller;
 
-
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -25,7 +23,7 @@ public class IniciaController {
 
     @FXML
     void cadastrarInicial(ActionEvent event) {
-    	System.out.println("!");
+
     }
 
     @FXML

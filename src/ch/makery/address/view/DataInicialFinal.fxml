@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="512.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.ConsultaProdutoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="512.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.DataInicialFinalController">
    <children>
       <Button fx:id="buttomConfirmar" mnemonicParsing="false" onAction="#confirmar" text="Confirmar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
       <Button fx:id="butomVoltar" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
@@ -31,8 +31,8 @@
          <children>
             <Label text="Data Inicial:" />
             <Label text="Data Final:" GridPane.columnIndex="2" />
-            <DatePicker GridPane.columnIndex="1" />
-            <DatePicker prefHeight="22.0" prefWidth="184.0" GridPane.columnIndex="3" />
+            <DatePicker fx:id="dataInicial" promptText="Data Inicial" GridPane.columnIndex="1" />
+            <DatePicker fx:id="dataFinal" prefHeight="22.0" prefWidth="184.0" promptText="Data Final" GridPane.columnIndex="3" />
          </children>
       </GridPane>
    </children>

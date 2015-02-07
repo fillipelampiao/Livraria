@@ -1,6 +1,5 @@
 package ch.makery.address.controller;
 
-import ch.makery.address.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,47 +7,45 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class CadastroPodutoController {
-	
-	Main main = new Main();
 
     @FXML
-    private TextField txtNomeProduto;
-
-    @FXML
-    private TextField txtQuantidadeProduto;
+    private TextField txtOutros;
 
     @FXML
     private Button buttomUploadVendas;
 
     @FXML
+    private TextField txtQuantidade;
+
+    @FXML
+    private Button buttomLimpar;
+
+    @FXML
+    private TextField txtNome;
+
+    @FXML
+    private Button buttomVoltar;
+
+    @FXML
+    private TextField txtCod;
+
+    @FXML
     private Button buttomAlterarPrecoCompra;
 
     @FXML
-    private TextField txtPrecoCompraProduto;
-
-    @FXML
-    private Button buttomVoltarInicial;
+    private Button buttomConfirmar;
 
     @FXML
     private TextArea txtDescricaoVendas;
 
     @FXML
-    private Button buttomConfirmarVendas;
-
-    @FXML
-    private TextField txtOutrosVenda;
-
-    @FXML
     private Button buttomAlterarPrecoVenda;
 
     @FXML
-    private Button buttomLimparVendas;
-
-    @FXML
-    private TextField txtCodProduto;
-
-    @FXML
     private TextField txtPrecoVenda;
+
+    @FXML
+    private TextField txtPrecoCompra;
 
     @FXML
     void alterarPrecoCompra(ActionEvent event) {
@@ -66,18 +63,18 @@ public class CadastroPodutoController {
     }
 
     @FXML
-    void limparVendas(ActionEvent event) {
+    void limpar(ActionEvent event) {
 
     }
 
     @FXML
-    void confirmarVendas(ActionEvent event) {
+    void confirmar(ActionEvent event) {
 
     }
 
     @FXML
-    void voltarInicial(ActionEvent event) {
-    	main.iniciaTelas("view/Inicia.fxml");
+    void voltar(ActionEvent event) {
+
     }
 
 }

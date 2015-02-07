@@ -1,55 +1,68 @@
 package ch.makery.address.controller;
 
-import ch.makery.address.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class CadastroFuncionarioController {
-	
-	Main main = new Main();
 
     @FXML
-    private Button buttomConfirmarFuncionario;
+    private TextField txtOutros;
 
     @FXML
-    private TextField txtEmailFuncionario;
+    private Button buttomVoltarGrupo;
 
     @FXML
-    private TextField txtNomeFuncionario;
+    private TextField txtSenha;
 
     @FXML
-    private TextField txtCpfFuncionario;
+    private Button buttomIrGrupo;
 
     @FXML
-    private Button buttomLimparFuncionario;
+    private Button buttomLimpar;
 
     @FXML
-    private TextField txtOutrosFuncionario;
+    private TextField txtNome;
 
     @FXML
-    private TextField txtRgFuncionario;
+    private TextField txtEmail;
 
     @FXML
-    private TextField txtSenhaFuncionario;
+    private Button buttomVoltar;
 
     @FXML
-    private Button buttomVoltarInicial;
+    private TextField txtCpf;
 
     @FXML
-    void limparFuncionario(ActionEvent event) {
+    private Button buttomConfirmar;
+
+    @FXML
+    private TextField txtRg;
+
+    @FXML
+    void irGrupo(ActionEvent event) {
 
     }
 
     @FXML
-    void confirmarFuncionario(ActionEvent event) {
+    void voltarGrupo(ActionEvent event) {
 
     }
 
     @FXML
-    void voltarInicial(ActionEvent event) {
-    	main.iniciaTelas("view/Inicia.fxml");
+    void limpar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void confirmar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void voltar(ActionEvent event) {
+
     }
 
 }

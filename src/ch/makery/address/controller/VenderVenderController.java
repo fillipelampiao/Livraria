@@ -3,6 +3,7 @@ package ch.makery.address.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -17,16 +18,19 @@ public class VenderVenderController {
     private TextField txtQuantidade;
 
     @FXML
-    private TableColumn<?, ?> tabUnitario;
-
-    @FXML
     private Button buttomVerCodProduto;
 
     @FXML
-    private TableColumn<?, ?> tabDescricao;
+    private TextField txtNome;
+
+    @FXML
+    private Button buttomVoltar;
 
     @FXML
     private ToggleGroup vistaprazo;
+
+    @FXML
+    private Button buttomConfirmar;
 
     @FXML
     private TextField txtDispEstoque;
@@ -35,40 +39,40 @@ public class VenderVenderController {
     private Button buttomVerCodCliente;
 
     @FXML
-    private Button buttomVoltarInicial;
-
-    @FXML
     private Button buttomIncluirVenda;
 
     @FXML
     private TableView<?> tabelaProdutos;
 
     @FXML
+    private TableColumn<?, ?> descricao;
+
+    @FXML
+    private TableColumn<?, ?> unitario;
+
+    @FXML
     private Button buttomLimparVenda;
 
     @FXML
-    private Button buttomConfirmarVendas;
+    private TableColumn<?, ?> total;
 
     @FXML
     private TextField txtCodProduto;
 
     @FXML
+    private Label preçoTotal;
+
+    @FXML
     private TextField txtNVenda;
 
     @FXML
-    private TextField txtNomeCliente;
+    private TableColumn<?, ?> cod;
 
     @FXML
-    private TableColumn<?, ?> tabelaCod;
-
-    @FXML
-    private TableColumn<?, ?> tabTotal;
+    private TableColumn<?, ?> quantidade;
 
     @FXML
     private TextField txtDataVenda;
-
-    @FXML
-    private TableColumn<?, ?> tabQuantidade;
 
     @FXML
     void verCodProduto(ActionEvent event) {
@@ -81,12 +85,22 @@ public class VenderVenderController {
     }
 
     @FXML
-    void confirmarVendas(ActionEvent event) {
+    void confirmar(ActionEvent event) {
 
     }
 
     @FXML
-    void voltarInicial(ActionEvent event) {
+    void voltar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void limparVenda(ActionEvent event) {
+
+    }
+
+    @FXML
+    void incluirVenda(ActionEvent event) {
 
     }
 

@@ -50,7 +50,7 @@ public class CadastroController {
     }
 
     @FXML
-    void logoffCadastro(ActionEvent event) {
+    void logoff(ActionEvent event) {
 
     }
 

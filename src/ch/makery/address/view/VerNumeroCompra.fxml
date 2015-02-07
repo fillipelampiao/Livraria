@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.VerNumeroCompra">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" styleClass="fundo" stylesheets="@../util/groupbox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.VerNumeroCompraController">
    <children>
       <HBox layoutX="20.0" layoutY="484.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="403.0">
          <children>
@@ -21,8 +21,8 @@
         <columns>
           <TableColumn fx:id="nCompra" prefWidth="97.0" text="Nº da compra" />
             <TableColumn fx:id="data" prefWidth="139.0" text="Data" />
-          <TableColumn fx:id="valorTotal" prefWidth="149.0" text="Produto" />
-            <TableColumn fx:id="data1" prefWidth="79.0" text="Valor total" />
+          <TableColumn fx:id="produto" prefWidth="149.0" text="Produto" />
+            <TableColumn fx:id="total" prefWidth="79.0" text="Valor total" />
         </columns>
       </TableView>
       <Button fx:id="buttomConfirmar" layoutX="434.0" layoutY="483.0" mnemonicParsing="false" onAction="#confirmar" text="Confirmar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />

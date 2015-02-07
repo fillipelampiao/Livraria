@@ -14,8 +14,8 @@
    <children>
       <TableView layoutX="20.0" layoutY="14.0" prefHeight="445.0" prefWidth="465.0">
         <columns>
-          <TableColumn fx:id="cod" prefWidth="75.0" text="Cod." />
-          <TableColumn fx:id="nome" prefWidth="389.0" text="Nome" />
+          <TableColumn fx:id="cod" prefWidth="75.0" text="cod" />
+          <TableColumn fx:id="nome" prefWidth="389.0" text="nome" />
         </columns>
       </TableView>
       <Button fx:id="buttomFechar" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />

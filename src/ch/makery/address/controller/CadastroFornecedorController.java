@@ -1,52 +1,65 @@
 package ch.makery.address.controller;
 
-import ch.makery.address.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class CadastroFornecedorController {
-	
-	Main main = new Main();
 
     @FXML
-    private TextField txtCpfCnpjFornecedor;
+    private TextField txtOutros;
 
     @FXML
-    private TextField txtEmailFornecedor;
+    private Button buttomVoltarGrupo;
 
     @FXML
-    private TextField txtNomeFornecedor;
+    private Button buttomIrGrupo;
 
     @FXML
-    private TextField txtOutrosFornecedor;
+    private Button buttomLimpar;
 
     @FXML
-    private Button buttomLimparFornecedor;
+    private TextField txtNome;
 
     @FXML
-    private TextField txtFoneFornecedor;
+    private TextField txtEmail;
 
     @FXML
-    private Button buttomConfirmarFornecedor;
+    private Button buttomVoltar;
 
     @FXML
-    private Button buttomVoltarInicial;
+    private TextField txtFone;
 
     @FXML
-    void limparFornecedor(ActionEvent event) {
+    private Button buttomConfirmar;
+
+    @FXML
+    private TextField txtCpfCnpj;
+
+    @FXML
+    void irGrupo(ActionEvent event) {
 
     }
 
     @FXML
-    void confirmarFornecedor(ActionEvent event) {
+    void voltarGrupo(ActionEvent event) {
 
     }
 
     @FXML
-    void voltarInicial(ActionEvent event) {
-    	main.iniciaTelas("view/Inicia.fxml");
+    void limpar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void confirmar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void voltar(ActionEvent event) {
+
     }
 
 }

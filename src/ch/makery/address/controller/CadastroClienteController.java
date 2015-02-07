@@ -1,58 +1,71 @@
 package ch.makery.address.controller;
 
-import ch.makery.address.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class CadastroClienteController {
-	
-	Main main = new Main();
 
     @FXML
-    private Button buttomConfirmarCliente;
+    private TextField txtOutros;
 
     @FXML
-    private TextField txtCodCliente;
+    private Button buttomVoltarGrupo;
 
     @FXML
-    private TextField txtEmailCliente;
+    private Button buttomIrGrupo;
 
     @FXML
-    private TextField txtFoneCliente;
+    private Button buttomLimpar;
 
     @FXML
-    private TextField txtRgCliente;
+    private TextField txtNome;
 
     @FXML
-    private TextField txtCpfCliente;
+    private TextField txtEmail;
 
     @FXML
-    private TextField txtNomeCliente;
+    private Button buttomVoltar;
 
     @FXML
-    private TextField txtOutrosCliente;
+    private TextField txtCod;
 
     @FXML
-    private Button buttomLimparCliente;
+    private TextField txtCpf;
 
     @FXML
-    private Button buttomVoltarInicial;
+    private TextField txtFone;
 
     @FXML
-    void limparCliente(ActionEvent event) {
+    private Button buttomConfirmar;
+
+    @FXML
+    private TextField txtRg;
+
+    @FXML
+    void irGrupo(ActionEvent event) {
 
     }
 
     @FXML
-    void confirmarCliente(ActionEvent event) {
+    void voltarGrupo(ActionEvent event) {
 
     }
 
     @FXML
-    void voltarInicial(ActionEvent event) {
-    	main.iniciaTelas("view/Inicia.fxml");
+    void limpar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void confirmar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void voltar(ActionEvent event) {
+
     }
 
 }

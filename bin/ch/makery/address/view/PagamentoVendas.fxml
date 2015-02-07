@@ -15,8 +15,8 @@
       <Button fx:id="buttomVoltarInicial" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#voltarInicial" text="Voltar" />
       <HBox layoutX="342.0" layoutY="477.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Button fx:id="buttomLimparVendas" layoutX="342.0" layoutY="477.0" mnemonicParsing="false" onAction="#limparVendas" text="Limpar" />
-            <Button fx:id="buttomConfirmarVendas" mnemonicParsing="false" onAction="#confirmarVendas" prefHeight="22.0" prefWidth="77.0" text="Pagar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Button fx:id="buttomLimpar" layoutX="342.0" layoutY="477.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+            <Button fx:id="buttomPagar" mnemonicParsing="false" onAction="#pagar" prefHeight="22.0" prefWidth="77.0" text="Pagar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
          </children>
       </HBox>
       <GridPane layoutX="68.0" layoutY="22.0" prefHeight="430.0" prefWidth="458.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="21.0">
@@ -71,11 +71,11 @@
             </GridPane>
             <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
               <columns>
-                <TableColumn fx:id="tabData" prefWidth="87.0" text="Nº venda" />
-                  <TableColumn fx:id="tabQuantidade" prefWidth="166.0" text="Data" />
-                  <TableColumn fx:id="tabProduto" prefWidth="164.0" text="Produtos" />
-                  <TableColumn fx:id="tabTotal" prefWidth="140.0" text="V. Total" />
-                  <TableColumn fx:id="tabDebito" prefWidth="104.0" text="Débito" />
+                <TableColumn fx:id="nuVenda" prefWidth="87.0" text="Nº venda" />
+                  <TableColumn fx:id="data" prefWidth="166.0" text="Data" />
+                  <TableColumn fx:id="produto" prefWidth="164.0" text="Produtos" />
+                  <TableColumn fx:id="total" prefWidth="140.0" text="V. Total" />
+                  <TableColumn fx:id="debito" prefWidth="104.0" text="Débito" />
               </columns>
             </TableView>
          </children>

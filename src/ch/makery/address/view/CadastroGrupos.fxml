@@ -23,7 +23,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Nome:" textFill="RED">
+            <Label text="Nome:">
                <font>
                   <Font name="Tw Cen MT" size="14.0" />
                </font>
@@ -47,8 +47,8 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="txtNomeGrupo" promptText="Digite o nome do grupo" GridPane.columnIndex="1" />
-            <TextField fx:id="txtOutrosGrupos" prefHeight="22.0" prefWidth="393.0" promptText="Outros" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtNome" promptText="Digite o nome do grupo" GridPane.columnIndex="1" />
+            <TextField fx:id="txtOutros" prefHeight="22.0" prefWidth="393.0" promptText="Outros" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -74,14 +74,14 @@
       </GridPane>
       <HBox layoutX="323.0" layoutY="475.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Button fx:id="buttomLimparGrupos" layoutX="323.0" layoutY="475.0" mnemonicParsing="false" onAction="#limparGrupos" text="Limpar" />
-            <Button fx:id="confirmarGrupos" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmarGrupos" text="Confirmar">
+            <Button fx:id="buttomLimpar" layoutX="323.0" layoutY="475.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+            <Button fx:id="confirmar" layoutX="408.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmar" text="Confirmar">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <Button fx:id="buttomVoltarInicial" layoutX="20.0" layoutY="488.0" mnemonicParsing="false" onAction="#voltarInicial" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
+      <Button fx:id="buttomVoltar" layoutX="20.0" layoutY="488.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
    </children>
 </AnchorPane>

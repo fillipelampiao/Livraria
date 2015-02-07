@@ -1,6 +1,5 @@
 package ch.makery.address.controller;
 
-import ch.makery.address.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,40 +7,38 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 public class CadastroGruposController {
-	
-	Main main = new Main();
 
     @FXML
-    private Button confirmarGrupos;
+    private TextField txtOutros;
 
     @FXML
     private ToggleGroup cf;
 
     @FXML
-    private TextField txtNomeGrupo;
+    private Button confirmar;
 
     @FXML
-    private TextField txtOutrosGrupos;
+    private Button buttomLimpar;
 
     @FXML
-    private Button buttomLimparGrupos;
+    private TextField txtNome;
 
     @FXML
-    private Button buttomVoltarInicial;
+    private Button buttomVoltar;
 
     @FXML
-    void limparGrupos(ActionEvent event) {
+    void limpar(ActionEvent event) {
 
     }
 
     @FXML
-    void confirmarGrupos(ActionEvent event) {
+    void confirmar(ActionEvent event) {
 
     }
 
     @FXML
-    void voltarInicial(ActionEvent event) {
-    	main.iniciaTelas("view/Inicia.fxml");
+    void voltar(ActionEvent event) {
+
     }
 
 }

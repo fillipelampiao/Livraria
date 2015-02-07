@@ -60,7 +60,7 @@
                </cursor></Button>
          </children>
       </GridPane>
-      <Button fx:id="buttomLogoff" layoutX="404.0" layoutY="33.0" mnemonicParsing="false" onAction="#logoffCadastro" prefHeight="22.0" prefWidth="82.0" text="Button" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <Button fx:id="buttomLogoff" layoutX="404.0" layoutY="33.0" mnemonicParsing="false" onAction="#logoff" prefHeight="22.0" prefWidth="82.0" text="Button" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <effect>
             <ImageInput>
                <source>

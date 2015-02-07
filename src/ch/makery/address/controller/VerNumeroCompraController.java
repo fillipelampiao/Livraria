@@ -5,19 +5,25 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 
-public class VerClienteCodNome {
+public class VerNumeroCompraController {
 
     @FXML
-    private Button buttomfechar;
+    private TableColumn<?, ?> total;
 
     @FXML
-    private TableColumn<?, ?> cliente;
+    private TableColumn<?, ?> data;
 
     @FXML
-    private TableColumn<?, ?> cod;
+    private TableColumn<?, ?> produto;
 
     @FXML
     private Button buttomConfirmar;
+
+    @FXML
+    private Button buttomFechar;
+
+    @FXML
+    private TableColumn<?, ?> nCompra;
 
     @FXML
     void fechar(ActionEvent event) {
