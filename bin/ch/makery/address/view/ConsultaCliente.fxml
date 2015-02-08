@@ -25,15 +25,15 @@
             <RowConstraints maxHeight="428.0" minHeight="10.0" prefHeight="406.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView prefHeight="365.0" prefWidth="478.0" GridPane.rowIndex="1">
+            <TableView fx:id="tabelaConsultarCliente" prefHeight="365.0" prefWidth="478.0" GridPane.rowIndex="1">
               <columns>
                 <TableColumn fx:id="cod" prefWidth="52.0" text="Cod." />
-                <TableColumn fx:id="nome" prefWidth="185.0" text="Nome" />
-                  <TableColumn fx:id="cpf" minWidth="0.0" prefWidth="118.0" text="CPF" />
-                  <TableColumn fx:id="rg" prefWidth="101.0" text="RG" />
-                  <TableColumn fx:id="email" prefWidth="94.0" text="Email" />
-                  <TableColumn fx:id="fone" minWidth="0.0" text="Fone" />
-                  <TableColumn fx:id="grupo" prefWidth="84.0" text="Grupo" />
+                <TableColumn fx:id="nome" prefWidth="90.0" text="Nome" />
+                  <TableColumn fx:id="cpf" minWidth="0.0" prefWidth="67.0" text="CPF" />
+                  <TableColumn fx:id="rg" minWidth="0.0" prefWidth="57.0" text="RG" />
+                  <TableColumn fx:id="email" minWidth="0.0" prefWidth="84.0" text="Email" />
+                  <TableColumn fx:id="fone" minWidth="0.0" prefWidth="63.0" text="Fone" />
+                  <TableColumn fx:id="grupo" minWidth="2.0" prefWidth="64.0" text="Grupo" />
               </columns>
             </TableView>
             <GridPane prefHeight="53.0" prefWidth="478.0">

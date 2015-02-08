@@ -1,21 +1,34 @@
 package ch.makery.address.controller;
 
+import javax.swing.JOptionPane;
+
+import ch.makery.address.model.Cliente;
 import ch.makery.address.Main;
+import ch.makery.address.util.ConectaBanco;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ConsultaClienteController {
-	
+	ConectaBanco conecta = new ConectaBanco();
 	Main main = new Main();
+	int del;
+	private ObservableList<Cliente> clientedados = FXCollections.observableArrayList();
 
     @FXML
-    private TableColumn<?, ?> fone;
+    private TableView<Cliente> tabelaConsultarCliente;
+    
+    @FXML
+    private TableColumn<Cliente, String> fone;
 
     @FXML
-    private TableColumn<?, ?> rg;
+    private TableColumn<Cliente, String> rg;
 
     @FXML
     private Button buttomExcluir;
@@ -24,16 +37,16 @@ public class ConsultaClienteController {
     private Button buttomEditar;
 
     @FXML
-    private TableColumn<?, ?> cpf;
+    private TableColumn<Cliente, String> cpf;
 
     @FXML
-    private TableColumn<?, ?> grupo;
+    private TableColumn<Cliente, String> grupo;
 
     @FXML
     private Button buttomPesquisar;
 
     @FXML
-    private TableColumn<?, ?> cod;
+    private TableColumn<Cliente, String> cod;
 
     @FXML
     private TextField txtNome;
@@ -42,14 +55,41 @@ public class ConsultaClienteController {
     private Button butomVoltar;
 
     @FXML
-    private TableColumn<?, ?> nome;
+    private TableColumn<Cliente, String> nome;
 
     @FXML
-    private TableColumn<?, ?> email;
+    private TableColumn<Cliente, String> email;
 
     @FXML
     void pesquisar(ActionEvent event) {
-
+    	clientedados.clear();
+		String pesquisa = txtNome.getText();
+		try {
+			conecta.conexao();
+			conecta.executaSQL("select * from clientes");
+			int cont = 0 ;
+			while(conecta.rs.next()){
+				if (conecta.rs.getString("nome_cliente").contains(pesquisa)) {
+					clientedados.add(new Cliente(String.valueOf(conecta.rs.getInt("id_cliente")),conecta.rs.getString("nome_cliente"),
+							conecta.rs.getString("cpf_cliente"), conecta.rs.getString("rg_cliente"), 
+							conecta.rs.getString("email_cliente"),conecta.rs.getString("telefone_cliente"),conecta.rs.getString("id_grupo")));
+	
+					cod.setCellValueFactory(new PropertyValueFactory<Cliente, String>("id"));
+					nome.setCellValueFactory(new PropertyValueFactory<Cliente, String>("nome"));
+					cpf.setCellValueFactory(new PropertyValueFactory<Cliente, String>("cpf"));
+					rg.setCellValueFactory(new PropertyValueFactory<Cliente, String>("rg"));
+					email.setCellValueFactory(new PropertyValueFactory<Cliente, String>("email"));
+					fone.setCellValueFactory(new PropertyValueFactory<Cliente, String>("fone"));
+					grupo.setCellValueFactory(new PropertyValueFactory<Cliente, String>("grupo"));
+					tabelaConsultarCliente.setItems(clientedados);
+					cont++;
+				}
+			}if (cont == 0) {
+				JOptionPane.showMessageDialog(null,pesquisa + " não encontrado!");
+			}			
+		} catch (Exception ex) {
+			JOptionPane.showMessageDialog(null,"Erro ao mostrar dados"+ex);
+		}
     }
 
     @FXML
@@ -59,7 +99,17 @@ public class ConsultaClienteController {
 
     @FXML
     void excluir(ActionEvent event) {
-
+    	if (tabelaConsultarCliente.getSelectionModel().getSelectedItem() != null ){
+	    	Cliente c = tabelaConsultarCliente.getSelectionModel().getSelectedItem();
+	    	del = JOptionPane.showConfirmDialog(null, "Deseja realmente apagar esse cliente?");
+    	
+	    	if (del == JOptionPane.YES_OPTION){
+	        	conecta.executaSQL("DELETE FROM clientes WHERE id_cliente ='"+c.getId()+"'");
+	        	txtNome.setText("");
+	        	JOptionPane.showMessageDialog(null,"Cliente apagado com sucesso");
+	        	pesquisar(event);
+        	}
+    	}
     }
 
     @FXML

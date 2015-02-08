@@ -2,7 +2,9 @@ package ch.makery.address;
 
 
 import java.io.IOException;
+
 import ch.makery.address.Main;
+import ch.makery.address.util.ConectaBanco;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,6 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+	ConectaBanco conecta = new ConectaBanco();
 	static BorderPane borde;
 	static Stage stage;
 	
@@ -20,6 +23,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
 		this.stage = stage;
+		conecta.conexao();
 		
 		iniciaAcordion(primaria);
 		
