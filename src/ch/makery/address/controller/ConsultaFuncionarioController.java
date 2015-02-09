@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -21,44 +22,47 @@ public class ConsultaFuncionarioController {
 	int del;
 	private ObservableList<Funcionarios> funcionariodados = FXCollections.observableArrayList();
 
-    @FXML
-    private TableView<Funcionarios> tabelaConsultarFuncionario;
+	 @FXML
+	    private Button buttomEditar;
 
-    @FXML
-    private TableColumn<Funcionarios, String> senha;
+	    @FXML
+	    private TableColumn<Funcionarios, String> grupo;
 
-    @FXML
-    private TableColumn<Funcionarios, String> rg;
+	    @FXML
+	    private Button buttomPesquisar;
 
-    @FXML
-    private Button buttomExcluir;
+	    @FXML
+	    private TextField txtNome;
 
-    @FXML
-    private Button buttomEditar;
+	    @FXML
+	    private Button butomVoltar;
 
-    @FXML
-    private TableColumn<Funcionarios, String> cpf;
+	    @FXML
+	    private TableColumn<Funcionarios, String> nome;
 
-    @FXML
-    private TableColumn<Funcionarios, String> grupo;
+	    @FXML
+	    private TableView<Funcionarios> tabelaConsultarFuncionario;
 
-    @FXML
-    private Button buttomPesquisar;
+	    @FXML
+	    private TableColumn<Funcionarios, String> senha;
 
-    @FXML
-    private TableColumn<Funcionarios, String> cod;
+	    @FXML
+	    private TableColumn<Funcionarios, String> rg;
 
-    @FXML
-    private TextField txtNome;
+	    @FXML
+	    private Button buttomExcluir;
 
-    @FXML
-    private Button butomVoltar;
+	    @FXML
+	    private TableColumn<Funcionarios, String> cpf;
 
-    @FXML
-    private TableColumn<Funcionarios, String> nome;
+	    @FXML
+	    private TableColumn<Funcionarios, String> cod;
 
-    @FXML
-    private TableColumn<Funcionarios, String> email;
+	    @FXML
+	    private TableColumn<Funcionarios, String> outros;
+
+	    @FXML
+	    private TableColumn<Funcionarios, String> email;
 
     @FXML
     void pesquisar(ActionEvent event) {
@@ -71,8 +75,8 @@ public class ConsultaFuncionarioController {
 			while(conecta.rs.next()){
 				if (conecta.rs.getString("nome_funcionario").contains(pesquisa)) {
 					funcionariodados.add(new Funcionarios(String.valueOf(conecta.rs.getInt("id_funcionario")),conecta.rs.getString("nome_funcionario"),
-							conecta.rs.getString("senha_funcionario"), conecta.rs.getString("cpf_funcionario"), conecta.rs.getString("rg_funcionario"), 
-							conecta.rs.getString("email_funcionario"),conecta.rs.getString("id_grupo")));
+							conecta.rs.getString("cpf_funcionario"), conecta.rs.getString("rg_funcionario"), 
+							conecta.rs.getString("email_funcionario"),conecta.rs.getString("outros_funcionario"),conecta.rs.getString("id_grupo"),conecta.rs.getString("senha_funcionario")));
 	
 					cod.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("id"));
 					nome.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("nome"));

@@ -1,7 +1,6 @@
 package ch.makery.address.model;
 
 import javafx.beans.property.SimpleStringProperty;
-
 import javafx.beans.property.StringProperty;
 
 
@@ -12,10 +11,12 @@ public class Cliente{
 	private StringProperty cpf;
 	private StringProperty rg;
 	private StringProperty email;
-	private StringProperty fone;
+	private StringProperty fone; //sugestao do cliente
 	private StringProperty outros;
+	private StringProperty idGrupo;
 	
-	public Cliente (String id,String nome,String cpf,String rg,String email, String fone, String outros){
+	// Para Clientes
+public Cliente (String id,String nome,String cpf,String rg,String email, String fone, String outros){
 		this.id = new SimpleStringProperty(id);
 		this.nome = new SimpleStringProperty(nome);
 		this.cpf = new SimpleStringProperty(cpf);
@@ -23,7 +24,27 @@ public class Cliente{
 		this.email = new SimpleStringProperty(email);
 		this.fone = new SimpleStringProperty(fone);
 		this.outros = new SimpleStringProperty(outros);
-	}
+}
+
+public Cliente (String nome,String cpf,String rg,String email, String fone, String outros){
+	this.nome = new SimpleStringProperty(nome);
+	this.cpf = new SimpleStringProperty(cpf);
+	this.rg = new SimpleStringProperty(rg);
+	this.email = new SimpleStringProperty(email);
+	this.fone = new SimpleStringProperty(fone);
+	this.outros = new SimpleStringProperty(outros);
+}
+// Para funcionarios
+public Cliente (String nome,String cpf,String rg,String email,String outros) {
+	this.nome = new SimpleStringProperty(nome);
+	this.cpf = new SimpleStringProperty(cpf);
+	this.rg = new SimpleStringProperty(rg);
+	this.email = new SimpleStringProperty(email);
+	this.outros = new SimpleStringProperty(outros);
+}
+
+
+
 	
 	
 	public String getId() {
@@ -111,6 +132,19 @@ public class Cliente{
 
     public StringProperty outroProperty() {
         return outros;
+    }
+    
+    //
+    public String getGrupo() {
+        return idGrupo.get();
+    }
+
+    public void setIdGrupo(String idGrupo) {
+        this.idGrupo.set(idGrupo);
+    }
+
+    public StringProperty grupoProperty() {
+        return idGrupo;
     }
    
     

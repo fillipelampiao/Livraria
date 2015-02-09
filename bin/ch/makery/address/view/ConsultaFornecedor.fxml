@@ -28,11 +28,10 @@
             <TableView fx:id="tabelaConsultarFornecedor" prefHeight="365.0" prefWidth="478.0" GridPane.rowIndex="1">
               <columns>
                 <TableColumn fx:id="cod" prefWidth="52.0" text="Cod." />
-                <TableColumn fx:id="nome" prefWidth="199.0" text="Nome" />
-                  <TableColumn fx:id="cpfCnpj" minWidth="0.0" prefWidth="132.0" text="CPF/CNPJ" />
-                  <TableColumn fx:id="email" prefWidth="118.0" text="Email" />
-                  <TableColumn fx:id="fone" prefWidth="107.0" text="Fone" />
-                  <TableColumn fx:id="grupo" prefWidth="106.0" text="Grupo" />
+                <TableColumn fx:id="nome" prefWidth="136.0" text="Nome" />
+                  <TableColumn fx:id="cpfCnpj" minWidth="0.0" prefWidth="101.0" text="CPF/CNPJ" />
+                  <TableColumn fx:id="outros" prefWidth="103.0" text="Outros" />
+                  <TableColumn fx:id="grupos" prefWidth="85.0" text="Grupos" />
               </columns>
             </TableView>
             <GridPane prefHeight="53.0" prefWidth="478.0">

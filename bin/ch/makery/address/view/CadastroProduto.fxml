@@ -75,10 +75,6 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="txtCod" promptText="Codigo do produto" GridPane.columnIndex="1">
-               <GridPane.margin>
-                  <Insets right="290.0" />
-               </GridPane.margin></TextField>
             <TextField fx:id="txtNome" prefHeight="22.0" prefWidth="100.0" promptText="Digite o nome do produto" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets />
@@ -135,6 +131,7 @@
                   <TextField fx:id="txtPrecoVenda" promptText="P. de venda" />
                </children>
             </GridPane>
+            <Label fx:id="codProduto" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <GridPane layoutX="109.0" layoutY="332.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="250.0">

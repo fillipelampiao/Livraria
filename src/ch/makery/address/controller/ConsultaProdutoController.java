@@ -22,30 +22,17 @@ public class ConsultaProdutoController {
 	int del;
 	private ObservableList<Produtos> produtodados = FXCollections.observableArrayList();
 
-	
-    @FXML
-    private TableView<Produtos> tabelaConsultarProduto;
-
-    @FXML
-    private TableColumn<Produtos, String> pCompra;
-
-    @FXML
+	@FXML
     private TableColumn<Produtos, String> pVenda;
-
-    @FXML
-    private Button buttomExcluir;
 
     @FXML
     private Button buttomEditar;
 
     @FXML
+    private TableView<Produtos> tabelaConsultarProduto;
+
+    @FXML
     private Button buttomPesquisar;
-
-    @FXML
-    private TableColumn<Produtos, String> cod;
-
-    @FXML
-    private TableColumn<Produtos, String> outros;
 
     @FXML
     private TextField txtNome;
@@ -55,6 +42,21 @@ public class ConsultaProdutoController {
 
     @FXML
     private TableColumn<Produtos, String> nome;
+
+    @FXML
+    private TableColumn<Produtos, String> descricao;
+
+    @FXML
+    private TableColumn<Produtos, String> pCompra;
+
+    @FXML
+    private Button buttomExcluir;
+
+    @FXML
+    private TableColumn<Produtos, String> cod;
+
+    @FXML
+    private TableColumn<Produtos, String> outros;
 
     @FXML
     private TableColumn<Produtos, String> quantidade;
@@ -70,8 +72,8 @@ public class ConsultaProdutoController {
 			while(conecta.rs.next()){
 				if (conecta.rs.getString("nome_produto").contains(pesquisa)) {
 					produtodados.add(new Produtos(String.valueOf(conecta.rs.getInt("id_produto")),conecta.rs.getString("nome_produto"),
-							conecta.rs.getFloat("quantidade_produto"), conecta.rs.getFloat("preco_compra"), 
-							conecta.rs.getFloat("preco_venda"),conecta.rs.getString("outros_produto")));
+							conecta.rs.getInt("quantidade_produto"), conecta.rs.getFloat("preco_compra"), 
+							conecta.rs.getFloat("preco_venda"),conecta.rs.getString("outros_produto"),conecta.rs.getString("descricao_produto")));
 	
 					cod.setCellValueFactory(new PropertyValueFactory<Produtos, String>("id"));
 					nome.setCellValueFactory(new PropertyValueFactory<Produtos, String>("nome"));
@@ -79,6 +81,7 @@ public class ConsultaProdutoController {
 					pCompra.setCellValueFactory(new PropertyValueFactory<Produtos, String>("pCompra"));
 					pVenda.setCellValueFactory(new PropertyValueFactory<Produtos, String>("pVenda"));
 					outros.setCellValueFactory(new PropertyValueFactory<Produtos, String>("outros"));
+					descricao.setCellValueFactory(new PropertyValueFactory<Produtos, String>("descricao"));
 					tabelaConsultarProduto.setItems(produtodados);
 					cont++;
 				}

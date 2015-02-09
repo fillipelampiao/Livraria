@@ -1,7 +1,9 @@
 package ch.makery.address.model;
 
 import javafx.beans.property.FloatProperty;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -10,22 +12,31 @@ public class Produtos{
 
 	private StringProperty id;
 	private StringProperty nome;
-	private FloatProperty quantidade;
+	private IntegerProperty quantidade;
 	private FloatProperty pCompra;
 	private FloatProperty pVenda;
 	private StringProperty outros;
 	private StringProperty descricao;
-	private StringProperty imagem;
+
 	
-	public Produtos (String id,String nome,Float quantidade,Float pCompra,Float pVenda, String outros){
+	public Produtos (String id,String nome,int quantidade,Float pCompra,Float pVenda,String outros, String descricao){
 		this.id = new SimpleStringProperty(id);
 		this.nome = new SimpleStringProperty(nome);
-		this.quantidade = new SimpleFloatProperty(quantidade);
+		this.quantidade = new SimpleIntegerProperty(quantidade);
 		this.pCompra = new SimpleFloatProperty(pCompra);
 		this.pVenda = new SimpleFloatProperty(pVenda);
 		this.outros = new SimpleStringProperty(outros);
-//		this.descricao = new SimpleStringProperty(descricao);
-//		this.imagem = new SimpleStringProperty(imagem);
+		this.descricao = new SimpleStringProperty(descricao);
+
+	}
+	
+	public Produtos (String nome,int quantidade,Float pCompra,Float pVenda,String outros, String descricao){
+		this.nome = new SimpleStringProperty(nome);
+		this.quantidade = new SimpleIntegerProperty(quantidade);
+		this.pCompra = new SimpleFloatProperty(pCompra);
+		this.pVenda = new SimpleFloatProperty(pVenda);
+		this.outros = new SimpleStringProperty(outros);
+		this.descricao = new SimpleStringProperty(descricao);
 	}
 	
 	
@@ -54,15 +65,15 @@ public class Produtos{
         return nome;
     }
     //
-    public Float getQuantidade() {
+    public Integer getQuantidade() {
         return quantidade.get();
     }
 
-    public void setQuantidade(Float quantidade) {
+    public void setQuantidade(int quantidade) {
         this.quantidade.set(quantidade);
     }
 
-    public FloatProperty quantidadeProperty() {
+    public IntegerProperty quantidadeProperty() {
         return quantidade;
     }
     //
@@ -116,17 +127,6 @@ public class Produtos{
         return descricao;
     }
     //
-    public String getImagem() {
-        return imagem.get();
-    }
-
-    public void setImagem(String imagem) {
-        this.imagem.set(imagem);
-    }
-
-    public StringProperty imagemProperty() {
-        return imagem;
-    }
-   
+  
     
 }

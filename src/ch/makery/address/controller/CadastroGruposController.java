@@ -5,6 +5,8 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
+import com.itextpdf.text.log.SysoCounter;
+
 import ch.makery.address.Main;
 import ch.makery.address.util.ConectaBanco;
 import javafx.event.ActionEvent;
@@ -48,9 +50,12 @@ public class CadastroGruposController {
     	Toggle tipo = cf.getSelectedToggle();
     	if (tipo.toString().contains("Cliente")){
     		grupo = 1;
+    	} else if (tipo.toString().contains("Funcionário")){
+    		grupo = 2;    		 
     	} else if (tipo.toString().contains("Fornecedor")){
-    		grupo = 2;    		
+    		grupo = 3;
     	}
+    	System.out.println(grupo);
     	try {
 			PreparedStatement pst = conecta.conn.prepareStatement("insert into grupos (nome_grupo, tipo_grupo, outros_grupo) values(?,?,?)");
 	    	pst.setString(1, txtNome.getText());

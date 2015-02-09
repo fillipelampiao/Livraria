@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 import ch.makery.address.Main;
+import ch.makery.address.model.Funcionarios;
 import ch.makery.address.util.ConectaBanco;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -73,14 +74,19 @@ public class CadastroFuncionarioController {
     void confirmar(ActionEvent event) {
     	conecta.conexao();
     	try {
-			PreparedStatement pst = conecta.conn.prepareStatement("insert into funcionarios (nome_funcionario, senha_funcionario, cpf_funcionario, rg_funcionario, email_funcionario, outros_funcionario) values(?,?,?,?,?,?)");
-	    	pst.setString(1, txtNome.getText());
-	    	pst.setString(2, txtSenha.getText());
-	    	pst.setString(3, txtCpf.getText());
-	    	pst.setString(4, txtRg.getText());
-	    	pst.setString(5, txtEmail.getText());
-	    	pst.setString(6, txtOutros.getText());
+			PreparedStatement pst = conecta.conn.prepareStatement("insert into funcionarios (nome_funcionario, senha_funcionario, cpf_funcionario, rg_funcionario, email_funcionario, outros_funcionario) values(?,?,?,?,?,?,?)");
+	    	Funcionarios funcionario = new Funcionarios(txtNome.getText(),txtSenha.getText(),txtCpf.getText(),
+	    								txtRg.getText(),txtEmail.getText(),txtOutros.getText());
+			
+			pst.setString(1, funcionario.getNome() );
+	    	pst.setString(2, funcionario.getidentificacao());
+	    	pst.setString(3, funcionario.getCpf());
+	    	pst.setString(4, funcionario.getRg());
+	    	pst.setString(5, funcionario.getEmail());
+	    	pst.setString(6, funcionario.getOutros());
 	    	pst.executeUpdate();
+	   
+	    	
 	    	JOptionPane.showMessageDialog(null,"Cadastro Realizado com Sucesso");
     	} catch (SQLException e) {
     		JOptionPane.showMessageDialog(null,"Erro ao cadastrar"+e);

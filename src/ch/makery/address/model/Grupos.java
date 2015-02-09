@@ -16,6 +16,11 @@ public class Grupos {
 		this.outros = new SimpleStringProperty(outros);
 	}
 	
+	public Grupos (String id,String nome){
+		this.id = new SimpleStringProperty(id);
+		this.nome = new SimpleStringProperty(nome);
+	}
+	
 	
 	public String getId() {
         return id.get();

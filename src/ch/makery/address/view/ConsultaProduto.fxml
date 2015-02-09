@@ -33,6 +33,7 @@
                   <TableColumn fx:id="pCompra" minWidth="0.0" prefWidth="87.0" text="P. compra" />
                   <TableColumn fx:id="pVenda" prefWidth="100.0" text="P. venda" />
                   <TableColumn fx:id="outros" prefWidth="245.0" text="Outros" />
+                  <TableColumn fx:id="descricao" prefWidth="245.0" text="Descricao" />
               </columns>
             </TableView>
             <GridPane prefHeight="53.0" prefWidth="478.0">

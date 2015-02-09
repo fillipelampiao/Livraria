@@ -8,17 +8,22 @@ public class Fornecedores {
 	private StringProperty id;
 	private StringProperty nome;
 	private StringProperty cnpj;
-	private StringProperty email;
-	private StringProperty fone;
 	private StringProperty outros;
+	private StringProperty grupo;
 	
-	public Fornecedores (String id,String nome,String cnpj,String email,String fone, String outros){
+	public Fornecedores (String id,String nome,String cnpj, String outros,String grupo){
 		this.id = new SimpleStringProperty(id);
 		this.nome = new SimpleStringProperty(nome);
 		this.cnpj = new SimpleStringProperty(cnpj);
-		this.email = new SimpleStringProperty(email);
-		this.fone = new SimpleStringProperty(fone);
 		this.outros = new SimpleStringProperty(outros);
+		this.grupo =  new SimpleStringProperty(grupo);
+	}
+	
+	public Fornecedores (String nome,String cnpj, String outros,String grupo){
+		this.nome = new SimpleStringProperty(nome);
+		this.cnpj = new SimpleStringProperty(cnpj);
+		this.outros = new SimpleStringProperty(outros);
+		this.grupo =  new SimpleStringProperty(grupo);
 	}
 	
 	
@@ -59,32 +64,6 @@ public class Fornecedores {
         return cnpj;
     }
     //
-    public String getEmail() {
-        return email.get();
-    }
-
-    public void setEmail(String email) {
-        this.email.set(email);
-    }
-
-    public StringProperty emailProperty() {
-        return email;
-    }
-    
-
-    //
-    public String getFone() {
-        return fone.get();
-    }
-
-    public void setFone(String fone) {
-        this.fone.set(fone);
-    }
-
-    public StringProperty foneProperty() {
-        return fone;
-    }
-    //
     public String getOutros() {
         return outros.get();
     }
@@ -95,6 +74,20 @@ public class Fornecedores {
 
     public StringProperty OutrosProperty() {
         return outros;
+    }
+    
+    //
+    
+    public String getGrupo() {
+        return outros.get();
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo.set(grupo);
+    }
+
+    public StringProperty grupoProperty() {
+        return grupo;
     }
     
 }

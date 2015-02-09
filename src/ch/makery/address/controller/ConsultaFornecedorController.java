@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 import ch.makery.address.Main;
 import ch.makery.address.model.Fornecedores;
+import ch.makery.address.model.Produtos;
 import ch.makery.address.util.ConectaBanco;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,25 +17,22 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ConsultaFornecedorController {
-	ConectaBanco conecta = new ConectaBanco();
-	Main main = new Main();
-	int del;
-	private ObservableList<Fornecedores> fornecedordados = FXCollections.observableArrayList();
 
+	Main main = new Main();
+	ConectaBanco conecta = new ConectaBanco();
+	private ObservableList<Fornecedores> fornecedordados = FXCollections.observableArrayList();
+    int del;
     @FXML
     private TableView<Fornecedores> tabelaConsultarFornecedor;
-    
+
     @FXML
-    private TableColumn<Fornecedores, String> fone;
+    private TableColumn<Fornecedores, String> grupos;
 
     @FXML
     private Button buttomExcluir;
 
     @FXML
     private Button buttomEditar;
-
-    @FXML
-    private TableColumn<Fornecedores, String> grupo;
 
     @FXML
     private Button buttomPesquisar;
@@ -55,7 +53,7 @@ public class ConsultaFornecedorController {
     private TableColumn<Fornecedores, String> cpfCnpj;
 
     @FXML
-    private TableColumn<Fornecedores, String> email;
+    private TableColumn<Fornecedores, String> outros;
 
     @FXML
     void pesquisar(ActionEvent event) {
@@ -68,15 +66,13 @@ public class ConsultaFornecedorController {
 			while(conecta.rs.next()){
 				if (conecta.rs.getString("nome_fornecedor").contains(pesquisa)) {
 					fornecedordados.add(new Fornecedores(String.valueOf(conecta.rs.getInt("id_fornecedore")),conecta.rs.getString("nome_fornecedor"),
-							conecta.rs.getString("cnpj_fornecedor"), conecta.rs.getString("email_fornecedor"),conecta.rs.getString("telefone_fornecedor"),
-							conecta.rs.getString("outros_fornecedor")));
+					conecta.rs.getString("cnpj_fornecedor"),conecta.rs.getString("outros_fornecedor"),conecta.rs.getString("id_grupo")));
 	
 					cod.setCellValueFactory(new PropertyValueFactory<Fornecedores, String>("id"));
 					nome.setCellValueFactory(new PropertyValueFactory<Fornecedores, String>("nome"));
 					cpfCnpj.setCellValueFactory(new PropertyValueFactory<Fornecedores, String>("cnpj"));
-					email.setCellValueFactory(new PropertyValueFactory<Fornecedores, String>("email"));
-					fone.setCellValueFactory(new PropertyValueFactory<Fornecedores, String>("fone"));
-					grupo.setCellValueFactory(new PropertyValueFactory<Fornecedores, String>("grupo"));
+					outros.setCellValueFactory(new PropertyValueFactory<Fornecedores, String>("outros"));
+					grupos.setCellValueFactory(new PropertyValueFactory<Fornecedores, String>("grupo"));
 					tabelaConsultarFornecedor.setItems(fornecedordados);
 					cont++;
 				}

@@ -6,17 +6,20 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 import ch.makery.address.Main;
+import ch.makery.address.model.Produtos;
 import ch.makery.address.util.ConectaBanco;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class CadastroPodutoController {
-	ConectaBanco conecta = new ConectaBanco();
-	Main main = new Main();
 	
+	Main main = new Main();
+	ConectaBanco conecta = new ConectaBanco();
+
     @FXML
     private TextField txtOutros;
 
@@ -36,13 +39,13 @@ public class CadastroPodutoController {
     private Button buttomVoltar;
 
     @FXML
-    private TextField txtCod;
-
-    @FXML
     private Button buttomAlterarPrecoCompra;
 
     @FXML
     private Button buttomConfirmar;
+
+    @FXML
+    private Label codProduto;
 
     @FXML
     private TextArea txtDescricaoVendas;
@@ -84,13 +87,15 @@ public class CadastroPodutoController {
     void confirmar(ActionEvent event) {
     	conecta.conexao();
     	try {
-			PreparedStatement pst = conecta.conn.prepareStatement("insert into produtos (nome_produto, preco_compra, preco_venda, quantidade_produto, outros_produto, descricao_produto) values(?,?,?,?,?,?)");
-	    	pst.setString(1, txtNome.getText());
-	    	pst.setFloat(2, Float.parseFloat(txtPrecoCompra.getText()));
-	    	pst.setFloat(3, Float.parseFloat(txtPrecoVenda.getText()));
-	    	pst.setFloat(4, Float.parseFloat(txtQuantidade.getText()));
-	    	pst.setString(5, txtOutros.getText());
-	    	pst.setString(6, txtDescricaoVendas.getText());
+			PreparedStatement pst = conecta.conn.prepareStatement("insert into produtos (nome_produto,quantidade_produto, preco_compra, preco_venda,outros_produto, descricao_produto) values(?,?,?,?,?,?)");
+	    	Produtos produto = new Produtos(txtNome.getText(),Integer.parseInt(txtQuantidade.getText()),Float.parseFloat(txtPrecoCompra.getText()),
+	    									Float.parseFloat(txtPrecoVenda.getText()), txtOutros.getText(),txtDescricaoVendas.getText());
+			pst.setString(1,produto.getNome());
+			pst.setInt(2, produto.getQuantidade());
+	    	pst.setFloat(3, produto.getPCompra());
+	    	pst.setFloat(4, produto.getPVenda());
+	    	pst.setString(5,produto.getOutros());
+	    	pst.setString(6, produto.getDescricao());
 	    	pst.executeUpdate();
 	    	JOptionPane.showMessageDialog(null,"Cadastro Realizado com Sucesso");
     	} catch (SQLException e) {

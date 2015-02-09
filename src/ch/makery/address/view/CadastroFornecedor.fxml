@@ -45,23 +45,7 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Email:" textAlignment="RIGHT" GridPane.rowIndex="2">
-               <font>
-                  <Font name="Tw Cen MT" size="14.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets right="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Fone:" textAlignment="RIGHT" textFill="RED" GridPane.rowIndex="3">
-               <font>
-                  <Font name="Tw Cen MT" size="14.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets right="5.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Outros:" textAlignment="RIGHT" GridPane.rowIndex="4">
+            <Label text="Outros:" textAlignment="RIGHT" GridPane.rowIndex="2">
                <font>
                   <Font name="Tw Cen MT" size="14.0" />
                </font>
@@ -75,17 +59,7 @@
                   <Insets right="290.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="txtEmail" promptText="Digite seu RG" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets right="290.0" />
-               </GridPane.margin>
-            </TextField>
-            <TextField fx:id="txtFone" promptText="Digite seu fone" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets right="290.0" />
-               </GridPane.margin>
-            </TextField>
-            <TextField fx:id="txtOutros" promptText="Digite seu outros" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="txtOutros" prefHeight="22.0" prefWidth="134.0" promptText="Digite seu RG" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -105,7 +79,6 @@
          <children>
             <Label text="Grupos:" />
             <Label text="Grupos do fornecedor:" GridPane.columnIndex="2" />
-            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
               <columnConstraints>
@@ -148,6 +121,24 @@
                   </Button>
                </children>
             </GridPane>
+            <TableView fx:id="sugestaoFornecedor" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="colCod" prefWidth="56.0" sortType="DESCENDING" text="Cod." />
+                <TableColumn fx:id="colNome" prefWidth="131.0" sortType="DESCENDING" text="Nome" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="fornecedor" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="colCodFornecedor" prefWidth="54.0" text="Cod" />
+                <TableColumn fx:id="colNomeFornecedor" prefWidth="133.0" text="Nome" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
          </children>
       </GridPane>
       <HBox layoutX="323.0" layoutY="475.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">

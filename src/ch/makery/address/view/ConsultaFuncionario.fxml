@@ -33,7 +33,8 @@
                   <TableColumn fx:id="cpf" minWidth="0.0" prefWidth="88.0" text="CPF" />
                   <TableColumn fx:id="rg" prefWidth="72.0" text="RG" />
                   <TableColumn fx:id="email" prefWidth="87.0" text="Email" />
-                  <TableColumn fx:id="grupo" prefWidth="236.0" text="Grupo" />
+                  <TableColumn fx:id="outros" prefWidth="236.0" text="Outros" />
+                  <TableColumn fx:id="grupo" prefWidth="87.0" text="Grupo" />
               </columns>
             </TableView>
             <GridPane prefHeight="53.0" prefWidth="478.0">
