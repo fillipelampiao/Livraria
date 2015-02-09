@@ -17,6 +17,7 @@ import javafx.scene.control.ToggleGroup;
 public class CadastroGruposController {
 	ConectaBanco conecta = new ConectaBanco();
 	Main main = new Main();
+	int grupo;
 	
     @FXML
     private TextField txtOutros;
@@ -44,11 +45,16 @@ public class CadastroGruposController {
     @FXML
     void confirmar(ActionEvent event) {
     	conecta.conexao();
-//    	Toggle tipo = cf.getSelectedToggle();
+    	Toggle tipo = cf.getSelectedToggle();
+    	if (tipo.toString().contains("Cliente")){
+    		grupo = 1;
+    	} else if (tipo.toString().contains("Fornecedor")){
+    		grupo = 2;    		
+    	}
     	try {
 			PreparedStatement pst = conecta.conn.prepareStatement("insert into grupos (nome_grupo, tipo_grupo, outros_grupo) values(?,?,?)");
 	    	pst.setString(1, txtNome.getText());
-//	    	pst.setString(2, tipo);
+	    	pst.setInt(2, grupo);
 	    	pst.setString(3, txtOutros.getText());
 	    	pst.executeUpdate();
 	    	JOptionPane.showMessageDialog(null,"Cadastro Realizado com Sucesso");
