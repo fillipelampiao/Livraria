@@ -30,49 +30,50 @@ public class CadastroFornecedorController implements Initializable {
 	private ObservableList<Grupos> gruposSugestoes = FXCollections.observableArrayList();
 	private ObservableList<Grupos> gruposAceitos = FXCollections.observableArrayList();
 	
+	Fornecedores fornecedor = new Fornecedores();
 	
+	@FXML
+	private TextField txtOutros;
+
+	@FXML
+	private Button buttomVoltarGrupo;
+
+	@FXML
+	private TableView<Grupos> sugestaoFornecedor;
+
+	@FXML
+	private TableView<Grupos> tabfornecedor;
+
+	@FXML
+	private Button buttomLimpar;
+
+	@FXML
+	private TextField txtNome;
+
+	@FXML
+	private Button buttomVoltar;
+
+	@FXML
+	private TableColumn<Grupos, String> nome;
+
+	@FXML
+	private Button buttomConfirmar;
+
+	@FXML
+	private TextField txtCpfCnpj;
+
+	@FXML
+	private Button buttomIrGrupo;
+
+	@FXML
+	private TableColumn<Grupos, String> cod;
+
+	@FXML
+	private TableColumn<Grupos, String> codSugerido;
+
+	@FXML
+	private TableColumn<Grupos, String> nomeSugerido;
 	
-    @FXML
-    private TextField txtOutros;
-
-    @FXML
-    private Button buttomVoltarGrupo;
-
-    @FXML
-    private TableView<Grupos> sugestaoFornecedor;
-
-    @FXML
-    private TableColumn<Grupos, String> colCod;
-
-    @FXML
-    private Button buttomLimpar;
-
-    @FXML
-    private TextField txtNome;
-
-    @FXML
-    private TableColumn<Grupos, String> colCodFornecedor;
-
-    @FXML
-    private Button buttomVoltar;
-
-    @FXML
-    private TableColumn<Grupos, String> colNomeFornecedor;
-
-    @FXML
-    private Button buttomConfirmar;
-
-    @FXML
-    private TextField txtCpfCnpj;
-
-    @FXML
-    private TableColumn<Grupos, String> colNome;
-
-    @FXML
-    private Button buttomIrGrupo;
-
-    @FXML
-    private TableView<Grupos> fornecedor;
     
     
     public void initialize(URL location, ResourceBundle resources) {
@@ -81,8 +82,8 @@ public class CadastroFornecedorController implements Initializable {
     	try {
 			while (conecta.rs.next()) {
 				gruposSugestoes.add(new Grupos(String.valueOf(conecta.rs.getInt("id_grupo")),conecta.rs.getString("nome_grupo")));
-				colCod.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
-				colNome.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
+				codSugerido.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
+				nomeSugerido.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
 				sugestaoFornecedor.setItems(gruposSugestoes);
 			}
 		} catch (SQLException e) {
@@ -95,7 +96,14 @@ public class CadastroFornecedorController implements Initializable {
     
     @FXML
     void irGrupo(ActionEvent event) {
-
+    	if (sugestaoFornecedor.getSelectionModel().getSelectedItem() != null ){
+    	    Grupos grup = sugestaoFornecedor.getSelectionModel().getSelectedItem();
+    	    fornecedor.getArrayGrupo().add(grup);
+    	    gruposAceitos.add(new Grupos(grup.getId(),grup.getNome()));
+	    	cod.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
+			nome.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
+			tabfornecedor.setItems(gruposAceitos);
+	    }
     }
 
     @FXML
@@ -108,6 +116,7 @@ public class CadastroFornecedorController implements Initializable {
     	txtNome.setText("");
     	txtCpfCnpj.setText("");
     	txtOutros.setText("");
+    	gruposAceitos.clear();
     }
 
     @FXML

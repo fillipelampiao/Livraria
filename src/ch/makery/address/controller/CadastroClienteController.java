@@ -3,6 +3,7 @@ package ch.makery.address.controller;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Collection;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
@@ -17,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -25,10 +27,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class CadastroClienteController implements Initializable {
 	ConectaBanco conecta = new ConectaBanco();
 	Main main = new Main();
+	Cliente cliente = new Cliente();
 	
 	private ObservableList<Grupos> gruposSugestoes = FXCollections.observableArrayList();
 	private ObservableList<Grupos> gruposAceitos = FXCollections.observableArrayList();
 	
+
     @FXML
     private TextField txtOutros;
 
@@ -58,7 +62,7 @@ public class CadastroClienteController implements Initializable {
 
     @FXML
     private TableColumn<Grupos, String> nome;
-
+    
     @FXML
     private TextField txtCpf;
 
@@ -79,15 +83,28 @@ public class CadastroClienteController implements Initializable {
 
     @FXML
     private TextField txtRg;
-
+    
     @FXML
     void irGrupo(ActionEvent event) {
-
+    	if (gruposSugeridos.getSelectionModel().getSelectedItem() != null ){
+    	    Grupos grup = gruposSugeridos.getSelectionModel().getSelectedItem();
+    	    cliente.getArrayGrupo().add(grup);
+    	    gruposAceitos.add(new Grupos(grup.getId(),grup.getNome()));
+	    	cod.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
+			nome.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
+			grupos.setItems(gruposAceitos);
+	    }
+	    	    	
     }
+    	
+   
 
     @FXML
     void voltarGrupo(ActionEvent event) {
-
+    	if (grupos.getSelectionModel().getSelectedItem() != null ){
+    		Grupos grup = grupos.getSelectionModel().getSelectedItem();
+    		gruposAceitos.removeAll(grup);
+    	}
     }
 
     @FXML
@@ -98,6 +115,7 @@ public class CadastroClienteController implements Initializable {
     	txtEmail.setText("");
     	txtOutros.setText("");
     	txtFone.setText("");
+    	gruposAceitos.clear();
     }
 
     @FXML
@@ -137,14 +155,24 @@ public class CadastroClienteController implements Initializable {
     	try {
 			while (conecta.rs.next()) {
 				gruposSugestoes.add(new Grupos(String.valueOf(conecta.rs.getInt("id_grupo")),conecta.rs.getString("nome_grupo")));
-				nome.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
-				cod.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
-				grupos.setItems(gruposSugestoes);
+				codSugeridos.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
+				nomeSugeridos.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
+				gruposSugeridos.setItems(gruposSugestoes);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			JOptionPane.showMessageDialog(null, "Erro ao inicializar Grupos de fornecedores");
 		}
+    	PreparedStatement pst;
+		
+    	try {
+			pst = conecta.conn.prepareStatement("INSERT INTO grupos (tipo_grupo) values (?)");
+			pst.setInt(1,1);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
     
 	}
 

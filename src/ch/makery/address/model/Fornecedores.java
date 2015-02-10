@@ -1,5 +1,7 @@
 package ch.makery.address.model;
 
+import java.util.ArrayList;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -10,6 +12,10 @@ public class Fornecedores {
 	private StringProperty cnpj;
 	private StringProperty outros;
 	private StringProperty grupo;
+	
+	private ArrayList<Grupos> grupos = new ArrayList<Grupos>();
+	
+	public Fornecedores(){};
 	
 	public Fornecedores (String id,String nome,String cnpj, String outros,String grupo){
 		this.id = new SimpleStringProperty(id);
@@ -88,6 +94,14 @@ public class Fornecedores {
 
     public StringProperty grupoProperty() {
         return grupo;
+    }
+    
+    public ArrayList<Grupos> getArrayGrupo(){
+    	return this.grupos;
+    }
+    
+    public void setArrayGrupo(){
+    	this.grupos = grupos;
     }
     
 }

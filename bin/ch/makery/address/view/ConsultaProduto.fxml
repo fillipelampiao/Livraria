@@ -63,7 +63,6 @@
       </GridPane>
       <HBox layoutX="587.0" layoutY="554.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Button fx:id="buttomEditar" layoutX="587.0" layoutY="554.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
             <Button fx:id="buttomExcluir" layoutX="658.0" layoutY="554.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
          </children>
       </HBox>

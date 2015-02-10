@@ -75,11 +75,6 @@
                   <Insets right="5.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="txtNome" prefHeight="22.0" prefWidth="100.0" promptText="Digite o nome do produto" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin>
-            </TextField>
             <TextField fx:id="txtQuantidade" prefHeight="22.0" prefWidth="82.0" promptText="Quantidade" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="260.0" />
@@ -107,11 +102,6 @@
                         <Insets />
                      </GridPane.margin>
                   </TextField>
-                  <Button fx:id="buttomAlterarPrecoCompra" mnemonicParsing="false" onAction="#alterarPrecoCompra" text="Alterar" wrapText="true" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </Button>
                </children>
             </GridPane>
             <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -123,15 +113,27 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="buttomAlterarPrecoVenda" mnemonicParsing="false" onAction="#alterarPrecoVenda" text="Alterar" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </Button>
                   <TextField fx:id="txtPrecoVenda" promptText="P. de venda" />
                </children>
             </GridPane>
             <Label fx:id="codProduto" GridPane.columnIndex="1" />
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="288.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="54.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="txtNome" />
+                  <Button fx:id="ver" mnemonicParsing="false" onAction="#ver" text="Ver" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
          </children>
       </GridPane>
       <GridPane layoutX="109.0" layoutY="332.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="250.0">

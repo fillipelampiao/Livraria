@@ -9,12 +9,24 @@ public class Grupos {
 	private StringProperty tipo;
 	private StringProperty outros;
 	
+	
+	public Grupos (){
+		
+	}
+
 	public Grupos (String id,String nome,String tipo, String outros){
 		this.id = new SimpleStringProperty(id);
 		this.nome = new SimpleStringProperty(nome);
 		this.tipo = new SimpleStringProperty(tipo);
 		this.outros = new SimpleStringProperty(outros);
 	}
+	
+	public Grupos (String nome,String tipo, String outros){
+		this.nome = new SimpleStringProperty(nome);
+		this.tipo = new SimpleStringProperty(tipo);
+		this.outros = new SimpleStringProperty(outros);
+	}
+	
 	
 	public Grupos (String id,String nome){
 		this.id = new SimpleStringProperty(id);

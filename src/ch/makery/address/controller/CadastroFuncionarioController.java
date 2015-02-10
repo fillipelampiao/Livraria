@@ -7,30 +7,35 @@ import javax.swing.JOptionPane;
 
 import ch.makery.address.Main;
 import ch.makery.address.model.Funcionarios;
+import ch.makery.address.model.Grupos;
 import ch.makery.address.util.ConectaBanco;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class CadastroFuncionarioController {
 	ConectaBanco conecta = new ConectaBanco();
 	Main main = new Main();
 	
-    @FXML
+	@FXML
     private TextField txtOutros;
 
     @FXML
     private Button buttomVoltarGrupo;
 
     @FXML
+    private CheckBox perConsultar;
+
+    @FXML
     private TextField txtSenha;
 
     @FXML
-    private Button buttomIrGrupo;
+    private Button buttomLimpar;
 
     @FXML
-    private Button buttomLimpar;
+    private CheckBox perCadastrar;
 
     @FXML
     private TextField txtNome;
@@ -42,16 +47,38 @@ public class CadastroFuncionarioController {
     private Button buttomVoltar;
 
     @FXML
+    private TableView<Grupos> grupos;
+
+    @FXML
     private TextField txtCpf;
 
     @FXML
     private Button buttomConfirmar;
 
     @FXML
+    private Button buttomIrGrupo;
+
+    @FXML
+    private CheckBox perVender;
+
+    @FXML
+    private TableView<Grupos> gruposSugeridos;
+
+    @FXML
     private TextField txtRg;
 
     @FXML
+    private CheckBox perRelatorio;
+
+    @FXML
     void irGrupo(ActionEvent event) {
+    	if (gruposSugeridos.getSelectionModel().getSelectedItem() != null ){
+    	    Grupos c = grupos.getSelectionModel().getSelectedItem();
+    	    gruposAceitos.add(new Grupos(c.getId(),c.getNome()));
+    	    codSugeridos.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
+    	    nomeSugeridos.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
+    	    gruposSugeridos.setItems(gruposAceitos);
+    	}
 
     }
 

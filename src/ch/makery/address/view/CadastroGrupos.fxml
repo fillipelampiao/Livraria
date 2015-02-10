@@ -63,13 +63,13 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <RadioButton mnemonicParsing="false" text="Cliente">
+                  <RadioButton fx:id="cliente" mnemonicParsing="false" text="Cliente">
                      <toggleGroup>
                         <ToggleGroup fx:id="cf" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Fornecedor" toggleGroup="$cf" GridPane.columnIndex="2" />
-                  <RadioButton mnemonicParsing="false" text="Funcionário" toggleGroup="$cf" GridPane.columnIndex="1" />
+                  <RadioButton fx:id="fornecedor" mnemonicParsing="false" text="Fornecedor" toggleGroup="$cf" GridPane.columnIndex="2" />
+                  <RadioButton fx:id="funcionario" mnemonicParsing="false" text="Funcionário" toggleGroup="$cf" GridPane.columnIndex="1" />
                </children>
             </GridPane>
          </children>

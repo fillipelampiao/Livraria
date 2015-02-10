@@ -1,11 +1,15 @@
 package ch.makery.address.model;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-
 public class Cliente{
 
+	
+	
 	private StringProperty id;
 	private StringProperty nome;
 	private StringProperty cpf;
@@ -14,6 +18,11 @@ public class Cliente{
 	private StringProperty fone; //sugestao do cliente
 	private StringProperty outros;
 	private StringProperty idGrupo;
+	
+	private ArrayList<Grupos> gruposClientes = new ArrayList<Grupos>();
+	
+	
+	public Cliente(){}
 	
 	// Para Clientes
 public Cliente (String id,String nome,String cpf,String rg,String email, String fone, String outros){
@@ -145,6 +154,14 @@ public Cliente (String nome,String cpf,String rg,String email,String outros) {
 
     public StringProperty grupoProperty() {
         return idGrupo;
+    }
+    
+    //
+    public ArrayList<Grupos> getArrayGrupo(){
+    	return this.gruposClientes;
+    }
+    public void setArrayGrupo(){
+    	this.gruposClientes = gruposClientes;
     }
    
     

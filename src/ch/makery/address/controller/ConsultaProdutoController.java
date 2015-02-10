@@ -49,8 +49,6 @@ public class ConsultaProdutoController {
     @FXML
     private TableColumn<Produtos, String> pCompra;
 
-    @FXML
-    private Button buttomExcluir;
 
     @FXML
     private TableColumn<Produtos, String> cod;
@@ -93,8 +91,9 @@ public class ConsultaProdutoController {
 		}
     }
 
+
     @FXML
-    void editar(ActionEvent event) {
+    void excluir(ActionEvent event) {
     	if (tabelaConsultarProduto.getSelectionModel().getSelectedItem() != null ){
 	    	Produtos c = tabelaConsultarProduto.getSelectionModel().getSelectedItem();
 	    	del = JOptionPane.showConfirmDialog(null, "Deseja realmente apagar esse produto?");
@@ -106,11 +105,6 @@ public class ConsultaProdutoController {
 	        	pesquisar(event);
         	}
     	}
-    }
-
-    @FXML
-    void excluir(ActionEvent event) {
-
     }
 
     @FXML

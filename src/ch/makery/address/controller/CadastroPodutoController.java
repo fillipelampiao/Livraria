@@ -20,8 +20,14 @@ public class CadastroPodutoController {
 	Main main = new Main();
 	ConectaBanco conecta = new ConectaBanco();
 
-    @FXML
+	@FXML
     private TextField txtOutros;
+
+    @FXML
+    private TextArea txtDescricaoVendas;
+
+    @FXML
+    private Button ver;
 
     @FXML
     private Button buttomUploadVendas;
@@ -39,25 +45,17 @@ public class CadastroPodutoController {
     private Button buttomVoltar;
 
     @FXML
-    private Button buttomAlterarPrecoCompra;
+    private TextField txtPrecoVenda;
+
+    @FXML
+    private TextField txtPrecoCompra;
 
     @FXML
     private Button buttomConfirmar;
 
     @FXML
     private Label codProduto;
-
-    @FXML
-    private TextArea txtDescricaoVendas;
-
-    @FXML
-    private Button buttomAlterarPrecoVenda;
-
-    @FXML
-    private TextField txtPrecoVenda;
-
-    @FXML
-    private TextField txtPrecoCompra;
+	    
 
     @FXML
     void alterarPrecoCompra(ActionEvent event) {
@@ -112,6 +110,12 @@ public class CadastroPodutoController {
     @FXML
     void voltar(ActionEvent event) {
     	main.iniciaTelas("view/Cadastro.fxml");
+    }
+    
+    @FXML
+    void ver(ActionEvent event) {
+
+    
     }
 
 }
