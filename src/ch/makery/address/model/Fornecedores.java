@@ -13,7 +13,7 @@ public class Fornecedores {
 	private StringProperty outros;
 	private StringProperty grupo;
 	
-	private ArrayList<Grupos> grupos = new ArrayList<Grupos>();
+	private static ArrayList<Grupos> grupos = new ArrayList<Grupos>();
 	
 	public Fornecedores(){};
 	
@@ -25,11 +25,10 @@ public class Fornecedores {
 		this.grupo =  new SimpleStringProperty(grupo);
 	}
 	
-	public Fornecedores (String nome,String cnpj, String outros,String grupo){
+	public Fornecedores (String nome,String cnpj, String outros){
 		this.nome = new SimpleStringProperty(nome);
 		this.cnpj = new SimpleStringProperty(cnpj);
 		this.outros = new SimpleStringProperty(outros);
-		this.grupo =  new SimpleStringProperty(grupo);
 	}
 	
 	

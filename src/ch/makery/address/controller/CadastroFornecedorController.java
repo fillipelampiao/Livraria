@@ -97,8 +97,10 @@ public class CadastroFornecedorController implements Initializable {
     @FXML
     void irGrupo(ActionEvent event) {
     	if (sugestaoFornecedor.getSelectionModel().getSelectedItem() != null ){
-    	    Grupos grup = sugestaoFornecedor.getSelectionModel().getSelectedItem();
+    	    
+    		Grupos grup = sugestaoFornecedor.getSelectionModel().getSelectedItem();
     	    fornecedor.getArrayGrupo().add(grup);
+    	    
     	    gruposAceitos.add(new Grupos(grup.getId(),grup.getNome()));
 	    	cod.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
 			nome.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
@@ -108,7 +110,11 @@ public class CadastroFornecedorController implements Initializable {
 
     @FXML
     void voltarGrupo(ActionEvent event) {
-
+    	if (sugestaoFornecedor.getSelectionModel().getSelectedItem() != null ){
+    		Grupos grup = sugestaoFornecedor.getSelectionModel().getSelectedItem();
+    		gruposAceitos.removeAll(grup);
+    		fornecedor.getArrayGrupo().remove(grup);
+    	}
     }
 
     @FXML
@@ -117,19 +123,31 @@ public class CadastroFornecedorController implements Initializable {
     	txtCpfCnpj.setText("");
     	txtOutros.setText("");
     	gruposAceitos.clear();
+    	fornecedor.getArrayGrupo().clear();
     }
 
     @FXML
     void confirmar(ActionEvent event) {
     	conecta.conexao();
     	try {
-			PreparedStatement pst = conecta.conn.prepareStatement("insert into fornecedores (nome_fornecedor, cnpj_fornecedor, outros_fornecedor,id_grupo) values(?,?,?,?)");
-	    	Fornecedores fornecedor = new Fornecedores(txtNome.getText(),txtCpfCnpj.getText(),txtOutros.getText(),null);
+			PreparedStatement pst = conecta.conn.prepareStatement("insert into fornecedores (nome_fornecedor, cnpj_fornecedor, outros_fornecedor) values(?,?,?)");
+	    	Fornecedores fornecedor = new Fornecedores(txtNome.getText(),txtCpfCnpj.getText(),txtOutros.getText());
 			pst.setString(1, fornecedor.getNome());
 	    	pst.setString(2,fornecedor.getCnpj() );
 	    	pst.setString(3,fornecedor.getOutros() );
-	    	pst.setString(4, fornecedor.getGrupo());
-	    	//pst.executeUpdate(5, fornec);
+	    	pst.executeUpdate();
+	    	
+	    	for (Grupos grupos : fornecedor.getArrayGrupo()) {
+	    		conecta.executaSQL("select * from fornecedores");
+	    		conecta.rs.last();
+	    		int idFornecedor = conecta.rs.getInt("id_fornecedore"); 
+	    		PreparedStatement pstGrupo = conecta.conn.prepareStatement("insert into grupos_fornecedores (id_fornecedor, id_grupo) values(?,?)");
+	    		pstGrupo.setInt(1, idFornecedor);
+	    		pstGrupo.setInt(2, Integer.valueOf(grupos.getId()));
+	    		pstGrupo.executeUpdate();
+	    	}
+	    	
+	    	
 	    	JOptionPane.showMessageDialog(null,"Cadastro Realizado com Sucesso");
     	} catch (SQLException e) {
     		JOptionPane.showMessageDialog(null,"Erro ao cadastrar"+e);
@@ -137,6 +155,9 @@ public class CadastroFornecedorController implements Initializable {
     	txtNome.setText("");
     	txtCpfCnpj.setText("");
     	txtOutros.setText("");
+    	fornecedor.getArrayGrupo().clear();
+    	gruposAceitos.clear();
+    	
     }
 
     @FXML

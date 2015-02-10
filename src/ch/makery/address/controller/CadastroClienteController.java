@@ -92,8 +92,8 @@ public class CadastroClienteController implements Initializable {
     	    gruposAceitos.add(new Grupos(grup.getId(),grup.getNome()));
 	    	cod.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
 			nome.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
+			gruposSugestoes.remove(gruposSugeridos.getSelectionModel().getSelectedItem());
 			grupos.setItems(gruposAceitos);
-    		conecta.executaSQL("select * from clientes");
 	    }
 	    	    	
     }
@@ -102,10 +102,19 @@ public class CadastroClienteController implements Initializable {
 
     @FXML
     void voltarGrupo(ActionEvent event) {
-    	if (grupos.getSelectionModel().getSelectedItem() != null ){
-    		Grupos grup = grupos.getSelectionModel().getSelectedItem();
+    	Grupos grup = grupos.getSelectionModel().getSelectedItem();
+    	if (grup != null ){
     		gruposAceitos.removeAll(grup);
-    		cliente.getArrayGrupo().remove(grup);
+    		gruposSugestoes.add(grup);
+    		Grupos grupo = null;
+    		for(Grupos g : cliente.getArrayGrupo()) {
+    			if(g.getId().equals(grup.getId())) {
+    				grupo = g;
+    				break;
+    			}
+    		}
+    		if(grupo != null)
+				cliente.getArrayGrupo().remove(grupo);
     	}
     }
 
@@ -119,6 +128,7 @@ public class CadastroClienteController implements Initializable {
     	txtFone.setText("");
     	gruposAceitos.clear();
     	cliente.getArrayGrupo().clear();
+    	
     }
 
     @FXML
@@ -137,6 +147,7 @@ public class CadastroClienteController implements Initializable {
 	    	pst.executeUpdate();
 	    	
 	    	for (Grupos grupos : cliente.getArrayGrupo()) {
+	    		conecta.executaSQL("select * from clientes");
 	    		conecta.rs.last();
 	    		int idCliente = conecta.rs.getInt("id_cliente"); 
 	    		PreparedStatement pstGrupo = conecta.conn.prepareStatement("insert into grupos_clientes (id_cliente, id_grupo) values(?,?)");
@@ -155,6 +166,9 @@ public class CadastroClienteController implements Initializable {
     	txtEmail.setText("");
     	txtOutros.setText("");
     	txtFone.setText("");
+    	cliente.getArrayGrupo().clear();
+    	gruposAceitos.clear();
+    	initialize(null, null);
     }
 
     @FXML
