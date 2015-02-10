@@ -76,7 +76,7 @@ public class ConsultaFuncionarioController {
 				if (conecta.rs.getString("nome_funcionario").contains(pesquisa)) {
 					funcionariodados.add(new Funcionarios(String.valueOf(conecta.rs.getInt("id_funcionario")),conecta.rs.getString("nome_funcionario"),
 							conecta.rs.getString("cpf_funcionario"), conecta.rs.getString("rg_funcionario"), 
-							conecta.rs.getString("email_funcionario"),conecta.rs.getString("outros_funcionario"),conecta.rs.getString("id_grupo"),conecta.rs.getString("senha_funcionario")));
+							conecta.rs.getString("email_funcionario"),conecta.rs.getString("outros_funcionario"),conecta.rs.getString("senha_funcionario")));
 	
 					cod.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("id"));
 					nome.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("nome"));

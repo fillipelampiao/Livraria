@@ -152,7 +152,7 @@
                   </Button>
                </children>
             </GridPane>
-            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+            <TableView fx:id="grupos" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
               <columns>
                 <TableColumn fx:id="cod" prefWidth="65.0" text="Cod." />
                 <TableColumn fx:id="nome" prefWidth="122.0" text="Nome" />
@@ -161,7 +161,7 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <TableView fx:id="gruposSugeridos" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
               <columns>
                 <TableColumn fx:id="codSugeridos" prefWidth="55.0" text="Cod." />
                 <TableColumn fx:id="nomeSugeridos" prefWidth="131.0" text="Nome" />

@@ -29,56 +29,56 @@ public class CadastroClienteController implements Initializable {
 	private ObservableList<Grupos> gruposSugestoes = FXCollections.observableArrayList();
 	private ObservableList<Grupos> gruposAceitos = FXCollections.observableArrayList();
 	
-	 @FXML
-	    private TextField txtOutros;
+    @FXML
+    private TextField txtOutros;
 
-	    @FXML
-	    private Button buttomVoltarGrupo;
-	    
-	    @FXML
-	    private TableView<Grupos> grupos;
-	    
-	    @FXML
-	    private TableView<Grupos> gruposSugeridos;
+    @FXML
+    private Button buttomVoltarGrupo;
 
-	    @FXML
-	    private TableColumn<Grupos, String> codSugeridos;
+    @FXML
+    private TableColumn<Grupos, String> codSugeridos;
 
-	    @FXML
-	    private TableColumn<Grupos, String> nomeSugeridos;
+    @FXML
+    private TableColumn<Grupos, String> nomeSugeridos;
 
-	    @FXML
-	    private Button buttomLimpar;
+    @FXML
+    private Button buttomLimpar;
 
-	    @FXML
-	    private TextField txtNome;
+    @FXML
+    private TextField txtNome;
 
-	    @FXML
-	    private TextField txtEmail;
+    @FXML
+    private TextField txtEmail;
 
-	    @FXML
-	    private Button buttomVoltar;
+    @FXML
+    private Button buttomVoltar;
 
-	    @FXML
-	    private TableColumn<Grupos, String> nome;
+    @FXML
+    private TableView<Grupos> grupos;
 
-	    @FXML
-	    private TextField txtCpf;
+    @FXML
+    private TableColumn<Grupos, String> nome;
 
-	    @FXML
-	    private TextField txtFone;
+    @FXML
+    private TextField txtCpf;
 
-	    @FXML
-	    private Button buttomConfirmar;
+    @FXML
+    private TextField txtFone;
 
-	    @FXML
-	    private Button buttomIrGrupo;
+    @FXML
+    private Button buttomConfirmar;
 
-	    @FXML
-	    private TableColumn<Grupos, String> cod;
+    @FXML
+    private Button buttomIrGrupo;
 
-	    @FXML
-	    private TextField txtRg;
+    @FXML
+    private TableColumn<Grupos, String> cod;
+
+    @FXML
+    private TableView<Grupos> gruposSugeridos;
+
+    @FXML
+    private TextField txtRg;
 
     @FXML
     void irGrupo(ActionEvent event) {
@@ -139,7 +139,7 @@ public class CadastroClienteController implements Initializable {
 				gruposSugestoes.add(new Grupos(String.valueOf(conecta.rs.getInt("id_grupo")),conecta.rs.getString("nome_grupo")));
 				nome.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
 				cod.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
-				gruposSugeridos.setItems(gruposSugestoes);
+				grupos.setItems(gruposSugestoes);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
