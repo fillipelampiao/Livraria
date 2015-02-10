@@ -93,6 +93,7 @@ public class CadastroClienteController implements Initializable {
 	    	cod.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
 			nome.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
 			grupos.setItems(gruposAceitos);
+    		conecta.executaSQL("select * from clientes");
 	    }
 	    	    	
     }
@@ -104,6 +105,7 @@ public class CadastroClienteController implements Initializable {
     	if (grupos.getSelectionModel().getSelectedItem() != null ){
     		Grupos grup = grupos.getSelectionModel().getSelectedItem();
     		gruposAceitos.removeAll(grup);
+    		cliente.getArrayGrupo().remove(grup);
     	}
     }
 
@@ -116,6 +118,7 @@ public class CadastroClienteController implements Initializable {
     	txtOutros.setText("");
     	txtFone.setText("");
     	gruposAceitos.clear();
+    	cliente.getArrayGrupo().clear();
     }
 
     @FXML
@@ -123,14 +126,25 @@ public class CadastroClienteController implements Initializable {
     	conecta.conexao();
     	try {
 			PreparedStatement pst = conecta.conn.prepareStatement("insert into clientes (nome_cliente, cpf_cliente, rg_cliente, email_cliente, outros_cliente, telefone_cliente) values(?,?,?,?,?,?)");
-			Cliente cliente = new Cliente(txtNome.getText(),txtCpf.getText(),txtRg.getText(),txtEmail.getText(),txtOutros.getText(),txtFone.getText());
-	    	pst.setString(1, cliente.getNome());
+			cliente = new Cliente(txtNome.getText(),txtCpf.getText(),txtRg.getText(),txtEmail.getText(),txtOutros.getText(),txtFone.getText());
+
+			pst.setString(1, cliente.getNome());
 	    	pst.setString(2, cliente.getCpf());
 	    	pst.setString(3, cliente.getRg());
 	    	pst.setString(4, cliente.getEmail());
 	    	pst.setString(5, cliente.getOutros());
 	    	pst.setString(6, cliente.getFone());
 	    	pst.executeUpdate();
+	    	
+	    	for (Grupos grupos : cliente.getArrayGrupo()) {
+	    		conecta.rs.last();
+	    		int idCliente = conecta.rs.getInt("id_cliente"); 
+	    		PreparedStatement pstGrupo = conecta.conn.prepareStatement("insert into grupos_clientes (id_cliente, id_grupo) values(?,?)");
+	    		pstGrupo.setInt(1, idCliente);
+	    		pstGrupo.setInt(2, Integer.valueOf(grupos.getId()));
+	    		pstGrupo.executeUpdate();
+	    	}
+	    	
 	    	JOptionPane.showMessageDialog(null,"Cadastro Realizado com Sucesso");
     	} catch (SQLException e) {
     		JOptionPane.showMessageDialog(null,"Erro ao cadastrar"+e);

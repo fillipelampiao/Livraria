@@ -19,7 +19,7 @@ public class Cliente{
 	private StringProperty outros;
 	private StringProperty idGrupo;
 	
-	private ArrayList<Grupos> gruposClientes = new ArrayList<Grupos>();
+	private static ArrayList<Grupos> gruposClientes = new ArrayList<Grupos>();
 	
 	
 	public Cliente(){}
