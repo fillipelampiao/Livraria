@@ -87,7 +87,7 @@ public class AcordionController {
 
     @FXML
     void produtosCadastro(ActionEvent event) {
-    	main.iniciaTelas("view/CadastroProdutos.fxml");
+    	main.iniciaTelas("view/CadastrarProduto.fxml");
     }
 
     @FXML
@@ -112,7 +112,7 @@ public class AcordionController {
 
     @FXML
     void venderVendas(ActionEvent event) {
-    	main.iniciaTelas("view/CadastroFuncionario.fxml");
+    	main.iniciaTelas("view/VenderVendas.fxml");
     }
 
     @FXML

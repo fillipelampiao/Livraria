@@ -76,44 +76,41 @@ public class CadastroFornecedorController implements Initializable {
 	
     
     
-    public void initialize(URL location, ResourceBundle resources) {
-    	conecta.conexao();
-    	conecta.executaSQL("select * from grupos where tipo_grupo = 3");
-    	try {
-			while (conecta.rs.next()) {
-				gruposSugestoes.add(new Grupos(String.valueOf(conecta.rs.getInt("id_grupo")),conecta.rs.getString("nome_grupo")));
-				codSugerido.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
-				nomeSugerido.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
-				sugestaoFornecedor.setItems(gruposSugestoes);
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			JOptionPane.showMessageDialog(null, "Erro ao inicializar Grupos de fornecedores");
-		}
-    }
+
     
     
     
     @FXML
     void irGrupo(ActionEvent event) {
     	if (sugestaoFornecedor.getSelectionModel().getSelectedItem() != null ){
+    	    Grupos grup = sugestaoFornecedor.getSelectionModel().getSelectedItem();
     	    
-    		Grupos grup = sugestaoFornecedor.getSelectionModel().getSelectedItem();
     	    fornecedor.getArrayGrupo().add(grup);
     	    
     	    gruposAceitos.add(new Grupos(grup.getId(),grup.getNome()));
 	    	cod.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
 			nome.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
+			
+			gruposSugestoes.remove(sugestaoFornecedor.getSelectionModel().getSelectedItem());
 			tabfornecedor.setItems(gruposAceitos);
 	    }
     }
 
     @FXML
     void voltarGrupo(ActionEvent event) {
-    	if (sugestaoFornecedor.getSelectionModel().getSelectedItem() != null ){
-    		Grupos grup = sugestaoFornecedor.getSelectionModel().getSelectedItem();
+    	Grupos grup = tabfornecedor.getSelectionModel().getSelectedItem();
+    	if (grup != null ){
     		gruposAceitos.removeAll(grup);
-    		fornecedor.getArrayGrupo().remove(grup);
+    		gruposSugestoes.add(grup);
+    		Grupos grupo = null;
+    		for(Grupos g : fornecedor.getArrayGrupo()) {
+    			if(g.getId().equals(grup.getId())) {
+    				grupo = g;
+    				break;
+    			}
+    		}
+    		if(grupo != null)
+				fornecedor.getArrayGrupo().remove(grupo);
     	}
     }
 
@@ -123,7 +120,9 @@ public class CadastroFornecedorController implements Initializable {
     	txtCpfCnpj.setText("");
     	txtOutros.setText("");
     	gruposAceitos.clear();
+    	gruposSugestoes.clear();
     	fornecedor.getArrayGrupo().clear();
+    	initialize(null,null);
     }
 
     @FXML
@@ -145,6 +144,7 @@ public class CadastroFornecedorController implements Initializable {
 	    		pstGrupo.setInt(1, idFornecedor);
 	    		pstGrupo.setInt(2, Integer.valueOf(grupos.getId()));
 	    		pstGrupo.executeUpdate();
+	    		
 	    	}
 	    	
 	    	
@@ -156,13 +156,31 @@ public class CadastroFornecedorController implements Initializable {
     	txtCpfCnpj.setText("");
     	txtOutros.setText("");
     	fornecedor.getArrayGrupo().clear();
+    	gruposSugestoes.clear();
     	gruposAceitos.clear();
+    	initialize(null, null);
     	
     }
 
     @FXML
     void voltar(ActionEvent event) {
     	main.iniciaTelas("view/Cadastro.fxml");
+    }
+    
+    public void initialize(URL location, ResourceBundle resources) {
+    	conecta.conexao();
+    	conecta.executaSQL("select * from grupos where tipo_grupo = 3");
+    	try {
+			while (conecta.rs.next()) {
+				gruposSugestoes.add(new Grupos(String.valueOf(conecta.rs.getInt("id_grupo")),conecta.rs.getString("nome_grupo")));
+				codSugerido.setCellValueFactory(new PropertyValueFactory<Grupos, String>("id"));
+				nomeSugerido.setCellValueFactory(new PropertyValueFactory<Grupos, String>("nome"));
+				sugestaoFornecedor.setItems(gruposSugestoes);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, "Erro ao inicializar Grupos de fornecedores");
+		}
     }
 
 }

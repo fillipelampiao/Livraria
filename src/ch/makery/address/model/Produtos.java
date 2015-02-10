@@ -17,9 +17,15 @@ public class Produtos{
 	private FloatProperty pVenda;
 	private StringProperty outros;
 	private StringProperty descricao;
+	private StringProperty imagem;
+	
+	public Produtos(String id, String nome){
+		this.id = new SimpleStringProperty(id);
+		this.nome = new SimpleStringProperty(nome);
+	}
 
 	
-	public Produtos (String id,String nome,int quantidade,Float pCompra,Float pVenda,String outros, String descricao){
+	public Produtos (String id,String nome,int quantidade,Float pCompra,Float pVenda,String outros, String descricao,String imagem){
 		this.id = new SimpleStringProperty(id);
 		this.nome = new SimpleStringProperty(nome);
 		this.quantidade = new SimpleIntegerProperty(quantidade);
@@ -27,9 +33,25 @@ public class Produtos{
 		this.pVenda = new SimpleFloatProperty(pVenda);
 		this.outros = new SimpleStringProperty(outros);
 		this.descricao = new SimpleStringProperty(descricao);
+		this.imagem = new SimpleStringProperty(imagem);
 
 	}
 	
+	public String getImagem() {
+		return imagem.get();
+	}
+
+
+	public void setImagem(String imagem) {
+		this.imagem.set(imagem);
+	}
+
+
+    public StringProperty imagemProperty() {
+        return imagem;
+    }
+	
+
 	public Produtos (String nome,int quantidade,Float pCompra,Float pVenda,String outros, String descricao){
 		this.nome = new SimpleStringProperty(nome);
 		this.quantidade = new SimpleIntegerProperty(quantidade);

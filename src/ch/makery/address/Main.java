@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	ConectaBanco conecta = new ConectaBanco();
 	static BorderPane borde;
-	static Stage stage;
+	public static Stage stage;
 	
 	private String primaria = "view/Acordion.fxml";
 	private String secundaria = "view/Inicia.fxml";

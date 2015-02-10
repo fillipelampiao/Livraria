@@ -38,7 +38,7 @@ public class CadastroController {
 
     @FXML
     void produtosCadastro(ActionEvent event) {
-    	main.iniciaTelas("view/CadastroProduto.fxml");
+    	main.iniciaTelas("view/CadastrarProduto.fxml");
     }
 
     @FXML

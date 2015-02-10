@@ -73,17 +73,19 @@ public class ConsultaFuncionarioController {
 			conecta.executaSQL("select * from funcionarios");
 			int cont = 0 ;
 			while(conecta.rs.next()){
+				//(String id,String nome,String cpf,String rg,String email,String outros,String identificacao
 				if (conecta.rs.getString("nome_funcionario").contains(pesquisa)) {
-					funcionariodados.add(new Funcionarios(String.valueOf(conecta.rs.getInt("id_funcionario")),conecta.rs.getString("nome_funcionario"),
-							conecta.rs.getString("cpf_funcionario"), conecta.rs.getString("rg_funcionario"), 
+					funcionariodados.add(new Funcionarios(String.valueOf(conecta.rs.getInt("id_funcionario")),conecta.rs.getString("nome_funcionario")
+							,conecta.rs.getString("cpf_funcionario"), conecta.rs.getString("rg_funcionario"), 
 							conecta.rs.getString("email_funcionario"),conecta.rs.getString("outros_funcionario"),conecta.rs.getString("senha_funcionario")));
 	
 					cod.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("id"));
 					nome.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("nome"));
-					senha.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("senha"));
+					senha.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("identificacao"));
 					cpf.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("cpf"));
 					rg.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("rg"));
 					email.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("email"));
+					outros.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("outros"));
 					grupo.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("grupo"));
 					tabelaConsultarFuncionario.setItems(funcionariodados);
 					cont++;

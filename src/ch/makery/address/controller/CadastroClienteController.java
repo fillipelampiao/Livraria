@@ -127,7 +127,9 @@ public class CadastroClienteController implements Initializable {
     	txtOutros.setText("");
     	txtFone.setText("");
     	gruposAceitos.clear();
+    	gruposSugestoes.clear();
     	cliente.getArrayGrupo().clear();
+    	initialize(null,null);
     	
     }
 
@@ -167,6 +169,7 @@ public class CadastroClienteController implements Initializable {
     	txtOutros.setText("");
     	txtFone.setText("");
     	cliente.getArrayGrupo().clear();
+    	gruposSugestoes.clear();
     	gruposAceitos.clear();
     	initialize(null, null);
     }

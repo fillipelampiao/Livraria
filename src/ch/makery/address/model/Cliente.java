@@ -25,7 +25,7 @@ public class Cliente{
 	public Cliente(){}
 	
 	// Para Clientes
-public Cliente (String id,String nome,String cpf,String rg,String email, String fone, String outros){
+	public Cliente (String id,String nome,String cpf,String rg,String email, String fone, String outros){
 		this.id = new SimpleStringProperty(id);
 		this.nome = new SimpleStringProperty(nome);
 		this.cpf = new SimpleStringProperty(cpf);
@@ -35,22 +35,24 @@ public Cliente (String id,String nome,String cpf,String rg,String email, String 
 		this.outros = new SimpleStringProperty(outros);
 }
 
-public Cliente (String nome,String cpf,String rg,String email, String fone, String outros){
-	this.nome = new SimpleStringProperty(nome);
-	this.cpf = new SimpleStringProperty(cpf);
-	this.rg = new SimpleStringProperty(rg);
-	this.email = new SimpleStringProperty(email);
-	this.fone = new SimpleStringProperty(fone);
-	this.outros = new SimpleStringProperty(outros);
+	public Cliente (String nome,String cpf,String rg,String email, String fone, String outros){
+		this.nome = new SimpleStringProperty(nome);
+		this.cpf = new SimpleStringProperty(cpf);
+		this.rg = new SimpleStringProperty(rg);
+		this.email = new SimpleStringProperty(email);
+		this.fone = new SimpleStringProperty(fone);
+		this.outros = new SimpleStringProperty(outros);
+	}
+	
+	public Cliente (String nome,String cpf,String rg,String email, String outros){
+		this.nome = new SimpleStringProperty(nome);
+		this.cpf = new SimpleStringProperty(cpf);
+		this.rg = new SimpleStringProperty(rg);
+		this.email = new SimpleStringProperty(email);
+		this.outros = new SimpleStringProperty(outros);
 }
-// Para funcionarios
-public Cliente (String nome,String cpf,String rg,String email,String outros) {
-	this.nome = new SimpleStringProperty(nome);
-	this.cpf = new SimpleStringProperty(cpf);
-	this.rg = new SimpleStringProperty(rg);
-	this.email = new SimpleStringProperty(email);
-	this.outros = new SimpleStringProperty(outros);
-}
+
+	
 
 
 

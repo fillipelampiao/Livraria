@@ -1,25 +1,47 @@
 package ch.makery.address.controller;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+
+import org.postgresql.copy.CopyIn;
 
 import ch.makery.address.Main;
 import ch.makery.address.model.Produtos;
 import ch.makery.address.util.ConectaBanco;
+import ch.makery.address.util.VerProdutoCadastro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
-public class CadastroPodutoController {
+public class CadastroPodutoController implements Initializable {
 	
 	Main main = new Main();
 	ConectaBanco conecta = new ConectaBanco();
+	
+	static String idProduto;
+	static String nomeProduto;
+	static String pCompra;
+	//static String pVenda;
+	//static String quantidade;
+	//static String outros;
+	//static String descricao;
+	//static String imagem;
 
+	
 	@FXML
     private TextField txtOutros;
 
@@ -54,22 +76,21 @@ public class CadastroPodutoController {
     private Button buttomConfirmar;
 
     @FXML
-    private Label codProduto;
-	    
-
-    @FXML
-    void alterarPrecoCompra(ActionEvent event) {
-
-    }
-
-    @FXML
-    void alterarPrecoVenda(ActionEvent event) {
-
-    }
+    private Label codProduto;	    
 
     @FXML
     void uploadVendas(ActionEvent event) {
-
+    	FileChooser fileChooser = new FileChooser();
+    	 fileChooser.setTitle("Escolha uma imagem");
+    	 fileChooser.getExtensionFilters().addAll(
+    			 new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+    	 File caminho = fileChooser.showOpenDialog(main.stage);
+    	 System.out.println(Main.class.getResource(String.valueOf(caminho)));
+    	 if (caminho != null) {
+    		
+    	 	 
+    	 }
+    	 
     }
 
     @FXML
@@ -79,6 +100,7 @@ public class CadastroPodutoController {
     	txtPrecoVenda.setText("");
     	txtQuantidade.setText("");
     	txtOutros.setText("");
+    	codProduto.setText("");
     }
 
     @FXML
@@ -110,12 +132,27 @@ public class CadastroPodutoController {
     @FXML
     void voltar(ActionEvent event) {
     	main.iniciaTelas("view/Cadastro.fxml");
+    	codProduto.setText("");
+    	txtNome.setText("");
+
     }
     
     @FXML
     void ver(ActionEvent event) {
-
-    
+    	new VerProdutoCadastro().start(new Stage());    
     }
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		txtNome.setText(nomeProduto);
+		codProduto.setText(idProduto);
+		//txtQuantidade.setText(quantidade);
+	//	txtOutros.setText(outros);
+		//txtDescricaoVendas.setText(descricao);
+		txtPrecoCompra.setText(pCompra);
+		//txtPrecoVenda.setText(pVenda);
+		System.out.println(pCompra);
+		
+	}
 
 }
