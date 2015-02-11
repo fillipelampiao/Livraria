@@ -37,6 +37,16 @@ public class Produtos{
 
 	}
 	
+	public Produtos (String id,String nome,int quantidade,Float pCompra,Float pVenda,String outros, String descricao){
+		this.id = new SimpleStringProperty(id);
+		this.nome = new SimpleStringProperty(nome);
+		this.quantidade = new SimpleIntegerProperty(quantidade);
+		this.pCompra = new SimpleFloatProperty(pCompra);
+		this.pVenda = new SimpleFloatProperty(pVenda);
+		this.outros = new SimpleStringProperty(outros);
+		this.descricao = new SimpleStringProperty(descricao);
+	}
+	
 	public String getImagem() {
 		return imagem.get();
 	}

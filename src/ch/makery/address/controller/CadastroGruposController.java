@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
-import com.itextpdf.text.log.SysoCounter;
 
 import ch.makery.address.Main;
 import ch.makery.address.model.Grupos;

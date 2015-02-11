@@ -146,16 +146,15 @@ public class CadastroFuncionarioController implements Initializable{
     void confirmar(ActionEvent event) {
     	conecta.conexao();
     	try {
-			PreparedStatement pst = conecta.conn.prepareStatement("insert into funcionarios (nome_funcionario, senha_funcionario, cpf_funcionario, rg_funcionario, email_funcionario, outros_funcionario) values(?,?,?,?,?,?)");
-	    	Funcionarios funcionario = new Funcionarios(txtNome.getText(),txtSenha.getText(),txtCpf.getText(),
-	    								txtRg.getText(),txtEmail.getText(),txtOutros.getText());
-			
+			PreparedStatement pst = conecta.conn.prepareStatement("insert into funcionarios (nome_funcionario, cpf_funcionario, rg_funcionario, email_funcionario, outros_funcionario, senha_funcionario) values(?,?,?,?,?,?)");
+	    	Funcionarios funcionario = new Funcionarios(txtNome.getText(),txtCpf.getText(),
+	    								txtRg.getText(),txtEmail.getText(),txtOutros.getText(),txtSenha.getText());
 			pst.setString(1, funcionario.getNome() );
-	    	pst.setString(2, funcionario.getidentificacao());
-	    	pst.setString(3, funcionario.getCpf());
-	    	pst.setString(4, funcionario.getRg());
-	    	pst.setString(5, funcionario.getEmail());
-	    	pst.setString(6, funcionario.getOutros());
+	    	pst.setString(2, funcionario.getCpf());
+	    	pst.setString(3, funcionario.getRg());
+	    	pst.setString(4, funcionario.getEmail());
+	    	pst.setString(5, funcionario.getOutros());
+	    	pst.setString(6, funcionario.getidentificacao());
 	    	pst.executeUpdate();
 	    	
 	    	for (Grupos grupos : funcionario.getArrayGrupo()) {

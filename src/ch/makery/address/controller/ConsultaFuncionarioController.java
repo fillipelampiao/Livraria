@@ -79,14 +79,14 @@ public class ConsultaFuncionarioController {
 							,conecta.rs.getString("cpf_funcionario"), conecta.rs.getString("rg_funcionario"), 
 							conecta.rs.getString("email_funcionario"),conecta.rs.getString("outros_funcionario"),conecta.rs.getString("senha_funcionario")));
 	
-					cod.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("id"));
-					nome.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("nome"));
+					email.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("fone"));
+					cod.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("nome"));
 					senha.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("identificacao"));
-					cpf.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("cpf"));
-					rg.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("rg"));
-					email.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("email"));
+					nome.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("cpf"));
+					cpf.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("rg"));
+					rg.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("email"));
 					outros.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("outros"));
-					grupo.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>("grupo"));
+					grupo.setCellValueFactory(new PropertyValueFactory<Funcionarios, String>(""));
 					tabelaConsultarFuncionario.setItems(funcionariodados);
 					cont++;
 				}
