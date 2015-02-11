@@ -8,7 +8,9 @@ import javafx.scene.control.TextField;
 
 public class ConsultaGrupoFuncionarioController {
 
-    @FXML
+    public static String idGrupo;
+
+	@FXML
     private Button buttomExcluir;
 
     @FXML

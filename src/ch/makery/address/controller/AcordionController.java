@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import com.itextpdf.text.DocumentException;
 
 import ch.makery.address.Main;
+import ch.makery.address.util.GeraTabelaProduto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

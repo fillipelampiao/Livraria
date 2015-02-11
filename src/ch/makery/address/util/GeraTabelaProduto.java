@@ -1,10 +1,8 @@
-package ch.makery.address.controller;
+package ch.makery.address.util;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-import ch.makery.address.util.ConectaBanco;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;

@@ -1,4 +1,4 @@
-package ch.makery.address.controller;
+package ch.makery.address.util;
 
 import java.io.IOException;
 
@@ -10,7 +10,6 @@ import java.util.ResourceBundle;
 
 import ch.makery.address.Main;
 import ch.makery.address.model.Produtos;
-import ch.makery.address.util.ConectaBanco;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import ch.makery.address.Main;
 import ch.makery.address.model.Grupos;
 import ch.makery.address.util.ConectaBanco;
+import ch.makery.address.util.VerProdutoCadastro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
