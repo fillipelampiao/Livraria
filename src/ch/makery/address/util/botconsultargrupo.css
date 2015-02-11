@@ -25,6 +25,17 @@
 	  -fx-background-image: url("../../../../../imgsMenus/consultar/fornecedorpressed.jpg");
 }
 
+.botfuncionario {
+	 -fx-background-image: url("../../../../../imgsMenus/consultar/funcionario1.jpg");
+	 -fx-background-color: transparent; 
+}
+.botfuncionario:hover {
+	-fx-background-image: url("../../../../../imgsMenus/consultar/funcionariohover1.jpg");
+}
+.botfuncionario:pressed {
+	  -fx-background-image: url("../../../../../imgsMenus/consultar/funcionariopressed1.jpg");
+}
+
 
 
 

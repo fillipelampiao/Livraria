@@ -11,6 +11,9 @@ public class ConsultaGrupoController {
 
     @FXML
     private Button buttomFornecedor;
+    
+    @FXML
+    private Button buttomFuncionario;
 
     @FXML
     private Button buttomCliente;
@@ -26,6 +29,11 @@ public class ConsultaGrupoController {
     @FXML
     void cliente(ActionEvent event) {
     	main.iniciaTelas("view/ConsultaGrupoCliente.fxml");
+    }
+    
+    @FXML
+    void funcionario(ActionEvent event) {
+
     }
 
     @FXML
