@@ -23,6 +23,7 @@ public class ConsultaGrupoFornecedorController {
 	Main main = new Main();
 	private ObservableList<Grupos> grupodados = FXCollections.observableArrayList();
 	VerProdutoCadastro telaeditar = new VerProdutoCadastro();
+	static String idGrupo;
 	
 	@FXML
 	private TableView<Grupos> tabelaGrupoFornecedor;
@@ -74,8 +75,14 @@ public class ConsultaGrupoFornecedorController {
 
     @FXML
     void editar(ActionEvent event) {
+    	if (tabelaGrupoFornecedor.getSelectionModel().getSelectedItem() != null ){
+	    	Grupos novo = tabelaGrupoFornecedor.getSelectionModel().getSelectedItem();
+	    	idGrupo = novo.getId();
+	    	conecta.conexao();
+	    	conecta.executaSQL("select * from grupos_fornecedores where id_fornecedor='"+novo.getId()+"'");
     	new VerProdutoCadastro().start(new Stage()); 
-    	telaeditar.iniciarTelaDois("view/EditarConsultaGrupoFuncionario.fxml");
+    	telaeditar.iniciarTelaDois("view/EditarConsultaGrupoFornecedor.fxml");
+    	}
     }
 
     @FXML

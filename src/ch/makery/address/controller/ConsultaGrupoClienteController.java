@@ -80,7 +80,7 @@ public class ConsultaGrupoClienteController {
 	    	Grupos novo = tabelaGrupoCliente.getSelectionModel().getSelectedItem();
 	    	idGrupo = novo.getId();
 	    	conecta.conexao();
-	    	conecta.executaSQL("select * from grupos_clientes where id_funionario='"+novo.getId()+"'");
+	    	conecta.executaSQL("select * from grupos_clientes where id_funcionario='"+novo.getId()+"'");
     	new VerProdutoCadastro().start(new Stage()); 
     	telaeditar.iniciarTelaDois("view/EditarConsultaGrupoCliente.fxml");
     	}

@@ -13,10 +13,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class EditarConsultaGrupoFuncionarioController implements Initializable {
-	static String idGrupo;
+public class EditarConsultaGrupoFornecedorController implements Initializable{
+	static String idgrupo;
 	VerProdutoCadastro novaTela = new VerProdutoCadastro();
-	ConsultaGrupoFuncionarioController grupoDados = new ConsultaGrupoFuncionarioController();
+	ConsultaGrupoFornecedorController grupoDados = new ConsultaGrupoFornecedorController();
 	ConectaBanco conecta = new ConectaBanco();
 	static String pesquisa;
 
@@ -30,14 +30,9 @@ public class EditarConsultaGrupoFuncionarioController implements Initializable {
     private Button buttomConfirmar;
 
     @FXML
-    void voltar(ActionEvent event) {
-    	novaTela.stage2.close();
-    }
-
-    @FXML
     void confirmar(ActionEvent event) {
-    	idGrupo = ConsultaGrupoFuncionarioController.idGrupo;
-		int id = Integer.valueOf(idGrupo);
+		idgrupo = ConsultaGrupoFornecedorController.idGrupo;
+		int id = Integer.valueOf(idgrupo);
     	conecta.conexao();
 		try {
 			PreparedStatement pst = conecta.conn.prepareStatement("update grupos set nome_grupo='"+txtNome.getText()+"' where id_grupo='"+id+"'");
@@ -49,20 +44,26 @@ public class EditarConsultaGrupoFuncionarioController implements Initializable {
     	novaTela.stage2.close();
     }
 
+    @FXML
+    void voltar(ActionEvent event) {
+    	novaTela.stage2.close();
+    }
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		idGrupo = ConsultaGrupoFuncionarioController.idGrupo;
-		int id = Integer.valueOf(idGrupo);
+		idgrupo = ConsultaGrupoFornecedorController.idGrupo;
+		int id = Integer.valueOf(idgrupo);
 		conecta.conexao();
-		conecta.executaSQL("select * from grupos, grupos_funcionarios where grupos.id_grupo=grupos_funcionarios.id_grupo");
+		conecta.executaSQL("select * from grupos, grupos_fornecedores where grupos.tipo_grupo=grupos_fornecedores.id_grupo_fornecedor");
 	
 		try {
 			while (conecta.rs.next()) {
 				txtNome.setText(conecta.rs.getString("nome_grupo"));
+//				txtGrupo.setText(conecta.rs.getString("grupo_funcionario"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}		
 	}
 
 }

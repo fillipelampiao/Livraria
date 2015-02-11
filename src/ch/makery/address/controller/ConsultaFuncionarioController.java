@@ -122,7 +122,7 @@ public class ConsultaFuncionarioController {
 	    	del = JOptionPane.showConfirmDialog(null, "Deseja realmente apagar esse funcionário?");
     	
 	    	if (del == JOptionPane.YES_OPTION){
-	        	conecta.executaSQL("DELETE FROM funcionarios WHERE id_funcionario ='"+c.getId()+"'");
+	        	conecta.executaSQL("DELETE FROM funcionarios WHERE id_funcionario ='"+c.getNome()+"'");
 	        	txtNome.setText("");
 	        	JOptionPane.showMessageDialog(null,"Funcionário apagado com sucesso");
 	        	pesquisar(event);
