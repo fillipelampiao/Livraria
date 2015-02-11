@@ -33,7 +33,7 @@ public class ConsultaGrupoController {
     
     @FXML
     void funcionario(ActionEvent event) {
-
+    	main.iniciaTelas("view/ConsultaGrupoFuncionario.fxml");
     }
 
     @FXML
