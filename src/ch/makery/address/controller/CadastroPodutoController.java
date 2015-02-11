@@ -31,6 +31,7 @@ public class CadastroPodutoController implements Initializable {
 	
 	Main main = new Main();
 	ConectaBanco conecta = new ConectaBanco();
+	VerProdutoCadastro novaTela = new VerProdutoCadastro();
 	
 	static String idProduto;
 	static String nomeProduto;
@@ -139,7 +140,9 @@ public class CadastroPodutoController implements Initializable {
     
     @FXML
     void ver(ActionEvent event) {
-    	new VerProdutoCadastro().start(new Stage());    
+    	new VerProdutoCadastro().start(new Stage()); 
+    	novaTela.iniciarTelaDois("view/VerProdutoCadastro.fxml");
+    	
     }
 
 	@Override

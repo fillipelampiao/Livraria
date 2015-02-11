@@ -3,8 +3,10 @@ package ch.makery.address.controller;
 import javax.swing.JOptionPane;
 
 import ch.makery.address.Main;
+import ch.makery.address.model.Funcionarios;
 import ch.makery.address.model.Grupos;
 import ch.makery.address.util.ConectaBanco;
+import ch.makery.address.util.VerProdutoCadastro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,12 +16,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class ConsultaGrupoClienteController {
 	
 	ConectaBanco conecta = new ConectaBanco();
 	Main main = new Main();
 	private ObservableList<Grupos> grupodados = FXCollections.observableArrayList();
+	VerProdutoCadastro telaeditar = new VerProdutoCadastro();
+	static String idGrupo;
 	
     @FXML
     private TableView<Grupos> tabelaGrupoCliente;
@@ -71,7 +76,14 @@ public class ConsultaGrupoClienteController {
 
     @FXML
     void editar(ActionEvent event) {
-
+    	if (tabelaGrupoCliente.getSelectionModel().getSelectedItem() != null ){
+	    	Grupos novo = tabelaGrupoCliente.getSelectionModel().getSelectedItem();
+	    	idGrupo = novo.getId();
+	    	conecta.conexao();
+	    	conecta.executaSQL("select * from grupos_clientes where id_funionario='"+novo.getId()+"'");
+    	new VerProdutoCadastro().start(new Stage()); 
+    	telaeditar.iniciarTelaDois("view/EditarConsultaGrupoCliente.fxml");
+    	}
     }
 
     @FXML

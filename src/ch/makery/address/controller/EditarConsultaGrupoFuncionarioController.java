@@ -1,11 +1,13 @@
 package ch.makery.address.controller;
 
+import ch.makery.address.util.VerProdutoCadastro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class EditarConsultaGrupoFuncionarioController {
+	VerProdutoCadastro novaTela = new VerProdutoCadastro();
 
     @FXML
     private Button butomVoltar;
@@ -18,7 +20,7 @@ public class EditarConsultaGrupoFuncionarioController {
 
     @FXML
     void voltar(ActionEvent event) {
-
+    	novaTela.stage2.close();
     }
 
     @FXML

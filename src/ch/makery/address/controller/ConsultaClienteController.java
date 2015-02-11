@@ -3,8 +3,10 @@ package ch.makery.address.controller;
 import javax.swing.JOptionPane;
 
 import ch.makery.address.model.Cliente;
+import ch.makery.address.model.Funcionarios;
 import ch.makery.address.Main;
 import ch.makery.address.util.ConectaBanco;
+import ch.makery.address.util.VerProdutoCadastro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,12 +16,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class ConsultaClienteController {
 	ConectaBanco conecta = new ConectaBanco();
 	Main main = new Main();
 	int del;
 	private ObservableList<Cliente> clientedados = FXCollections.observableArrayList();
+	VerProdutoCadastro telaeditar = new VerProdutoCadastro();
+	static String idcliente;
 
     @FXML
     private TableView<Cliente> tabelaConsultarCliente;
@@ -94,7 +99,14 @@ public class ConsultaClienteController {
 
     @FXML
     void editar(ActionEvent event) {
-
+    	if (tabelaConsultarCliente.getSelectionModel().getSelectedItem() != null ){
+	    	Cliente novo = tabelaConsultarCliente.getSelectionModel().getSelectedItem();
+	    	idcliente = novo.getId();
+	    	conecta.conexao();
+	    	conecta.executaSQL("select * from clientes where id_cliente='"+novo.getId()+"'");
+    	new VerProdutoCadastro().start(new Stage()); 
+    	telaeditar.iniciarTelaDois("view/EditarConsultaCliente.fxml");
+    	}
     }
 
     @FXML

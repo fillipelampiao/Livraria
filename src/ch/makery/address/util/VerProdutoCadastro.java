@@ -24,7 +24,7 @@ public class VerProdutoCadastro extends Application {
 	ConectaBanco conecta = new ConectaBanco();
 	public static Stage stage2;
 	private Pane pane2;
-	String caminho = "view/VerProdutoCadastro.fxml";
+	private String caminho = "";
 
 
 	public void start(Stage stage2){

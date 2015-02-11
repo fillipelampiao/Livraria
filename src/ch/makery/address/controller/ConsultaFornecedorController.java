@@ -4,8 +4,10 @@ import javax.swing.JOptionPane;
 
 import ch.makery.address.Main;
 import ch.makery.address.model.Fornecedores;
+import ch.makery.address.model.Funcionarios;
 import ch.makery.address.model.Produtos;
 import ch.makery.address.util.ConectaBanco;
+import ch.makery.address.util.VerProdutoCadastro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,13 +17,17 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class ConsultaFornecedorController {
 
 	Main main = new Main();
 	ConectaBanco conecta = new ConectaBanco();
 	private ObservableList<Fornecedores> fornecedordados = FXCollections.observableArrayList();
+	VerProdutoCadastro telaeditar = new VerProdutoCadastro();
     int del;
+    static String idforn;
+    
     @FXML
     private TableView<Fornecedores> tabelaConsultarFornecedor;
 
@@ -86,7 +92,14 @@ public class ConsultaFornecedorController {
 
     @FXML
     void editar(ActionEvent event) {
-
+    	if (tabelaConsultarFornecedor.getSelectionModel().getSelectedItem() != null ){
+	    	Fornecedores novo = tabelaConsultarFornecedor.getSelectionModel().getSelectedItem();
+	    	idforn = novo.getId();
+	    	conecta.conexao();
+	    	conecta.executaSQL("select * from fornecedores where id_fornecedore='"+novo.getId()+"'");
+    	new VerProdutoCadastro().start(new Stage()); 
+    	telaeditar.iniciarTelaDois("view/EditarConsultaFornecedor.fxml");
+    	}
     }
 
     @FXML

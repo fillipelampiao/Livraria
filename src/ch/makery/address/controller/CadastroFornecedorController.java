@@ -73,12 +73,6 @@ public class CadastroFornecedorController implements Initializable {
 
 	@FXML
 	private TableColumn<Grupos, String> nomeSugerido;
-	
-    
-    
-
-    
-    
     
     @FXML
     void irGrupo(ActionEvent event) {

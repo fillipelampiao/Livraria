@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import ch.makery.address.Main;
 import ch.makery.address.model.Funcionarios;
 import ch.makery.address.util.ConectaBanco;
+import ch.makery.address.util.VerProdutoCadastro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,11 +16,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class ConsultaFuncionarioController {
 	ConectaBanco conecta = new ConectaBanco();
+	VerProdutoCadastro telaeditar = new VerProdutoCadastro();
 	Main main = new Main();
 	int del;
+	static String idfunc;
+	static String pesquisa;
 	private ObservableList<Funcionarios> funcionariodados = FXCollections.observableArrayList();
 
 	 @FXML
@@ -67,7 +72,7 @@ public class ConsultaFuncionarioController {
     @FXML
     void pesquisar(ActionEvent event) {
     	funcionariodados.clear();
-		String pesquisa = txtNome.getText();
+		pesquisa = txtNome.getText();
 		try {
 			conecta.conexao();
 			conecta.executaSQL("select * from funcionarios");
@@ -100,7 +105,14 @@ public class ConsultaFuncionarioController {
 
     @FXML
     void editar(ActionEvent event) {
-
+    	if (tabelaConsultarFuncionario.getSelectionModel().getSelectedItem() != null ){
+	    	Funcionarios novo = tabelaConsultarFuncionario.getSelectionModel().getSelectedItem();
+	    	idfunc = novo.getNome();
+	    	conecta.conexao();
+	    	conecta.executaSQL("select * from funcionarios where id_funionario='"+novo.getNome()+"'");
+	    	new VerProdutoCadastro().start(new Stage()); 
+	    	telaeditar.iniciarTelaDois("view/EditarConsultaFuncionario.fxml");
+    	}
     }
 
     @FXML

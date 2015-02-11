@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import ch.makery.address.Main;
 import ch.makery.address.model.Grupos;
 import ch.makery.address.util.ConectaBanco;
+import ch.makery.address.util.VerProdutoCadastro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,12 +15,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class ConsultaGrupoFornecedorController {
 	
 	ConectaBanco conecta = new ConectaBanco();
 	Main main = new Main();
 	private ObservableList<Grupos> grupodados = FXCollections.observableArrayList();
+	VerProdutoCadastro telaeditar = new VerProdutoCadastro();
 	
 	@FXML
 	private TableView<Grupos> tabelaGrupoFornecedor;
@@ -71,7 +74,8 @@ public class ConsultaGrupoFornecedorController {
 
     @FXML
     void editar(ActionEvent event) {
-
+    	new VerProdutoCadastro().start(new Stage()); 
+    	telaeditar.iniciarTelaDois("view/EditarConsultaGrupoFuncionario.fxml");
     }
 
     @FXML
