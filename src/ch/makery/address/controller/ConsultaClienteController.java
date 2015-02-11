@@ -6,7 +6,6 @@ import ch.makery.address.model.Cliente;
 import ch.makery.address.model.Funcionarios;
 import ch.makery.address.Main;
 import ch.makery.address.util.ConectaBanco;
-import ch.makery.address.util.VerProdutoCadastro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

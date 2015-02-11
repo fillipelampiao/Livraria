@@ -16,7 +16,6 @@ import org.postgresql.copy.CopyIn;
 import ch.makery.address.Main;
 import ch.makery.address.model.Produtos;
 import ch.makery.address.util.ConectaBanco;
-import ch.makery.address.util.VerProdutoCadastro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

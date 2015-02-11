@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import ch.makery.address.util.ConectaBanco;
-import ch.makery.address.util.VerProdutoCadastro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

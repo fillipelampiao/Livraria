@@ -1,6 +1,5 @@
 package ch.makery.address.controller;
 
-import ch.makery.address.util.VerProdutoCadastro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
