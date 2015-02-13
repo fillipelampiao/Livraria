@@ -89,6 +89,7 @@ public class CadastroGruposController implements Initializable {
 	    	txtNome.setText("");
 	    	txtOutros.setText("");
     	}
+    	conecta.desconecta();
    }
 
     @FXML

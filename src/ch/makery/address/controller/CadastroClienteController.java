@@ -157,6 +157,7 @@ public class CadastroClienteController implements Initializable {
 	    		pstGrupo.setInt(2, Integer.valueOf(grupos.getId()));
 	    		pstGrupo.executeUpdate();
 	    	}
+	    	conecta.desconecta();
 	    	
 	    	JOptionPane.showMessageDialog(null,"Cadastro Realizado com Sucesso");
     	} catch (SQLException e) {
@@ -203,6 +204,7 @@ public class CadastroClienteController implements Initializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    	conecta.desconecta();
         
     
 	}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.VerProdutoController">
+   <children>
+      <Button fx:id="buttomPesquisar" layoutX="396.0" layoutY="39.0" mnemonicParsing="false" onAction="#pesquisar" text="Pesquisar" />
+      <TextField fx:id="txtProduto" layoutX="126.0" layoutY="39.0" prefHeight="22.0" prefWidth="249.0" />
+      <Label layoutX="30.0" layoutY="43.0" text="Nome Produto" />
+      <TableView fx:id="tabelaVerProduto" layoutX="30.0" layoutY="74.0" prefHeight="395.0" prefWidth="432.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="74.0">
+         <columns>
+            <TableColumn fx:id="cod" prefWidth="75.0" text="Id Prod." />
+            <TableColumn fx:id="produto" prefWidth="389.0" text="Nome Produto" />
+         </columns>
+      </TableView>
+      <HBox layoutX="352.0" layoutY="487.0" spacing="20.0">
+         <children>
+            <Button fx:id="buttomConfirmar" mnemonicParsing="false" onAction="#confirmar" prefHeight="22.0" prefWidth="77.0" text="Confirmar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+         </children>
+      </HBox>
+      <Button fx:id="buttomfechar" layoutX="30.0" layoutY="487.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" />
+   </children>
+</AnchorPane>

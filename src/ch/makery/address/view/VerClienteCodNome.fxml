@@ -18,7 +18,7 @@
             <Button fx:id="buttomConfirmar" mnemonicParsing="false" onAction="#confirmar" prefHeight="22.0" prefWidth="77.0" text="Confirmar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
          </children>
       </HBox>
-      <TableView layoutX="20.0" layoutY="64.0" prefHeight="395.0" prefWidth="465.0">
+      <TableView fx:id="tabelaVerCliente" layoutX="20.0" layoutY="64.0" prefHeight="395.0" prefWidth="465.0">
         <columns>
           <TableColumn fx:id="cod" prefWidth="75.0" text="Cod." />
           <TableColumn fx:id="cliente" prefWidth="389.0" text="Nome cliente" />

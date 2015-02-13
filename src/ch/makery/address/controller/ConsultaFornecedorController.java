@@ -88,6 +88,7 @@ public class ConsultaFornecedorController {
 		} catch (Exception ex) {
 			JOptionPane.showMessageDialog(null,"Erro ao mostrar dados"+ex);
 		}
+		conecta.desconecta();
     }
 
     @FXML
@@ -100,6 +101,7 @@ public class ConsultaFornecedorController {
     	new VerProdutoCadastro().start(new Stage()); 
     	telaeditar.iniciarTelaDois("view/EditarConsultaFornecedor.fxml");
     	}
+    	conecta.desconecta();
     }
 
     @FXML

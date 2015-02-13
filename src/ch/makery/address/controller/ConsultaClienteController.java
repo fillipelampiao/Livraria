@@ -95,6 +95,7 @@ public class ConsultaClienteController {
 		} catch (Exception ex) {
 			JOptionPane.showMessageDialog(null,"Erro ao mostrar dados"+ex);
 		}
+		conecta.desconecta();
     }
 
     @FXML
@@ -107,6 +108,7 @@ public class ConsultaClienteController {
     	new VerProdutoCadastro().start(new Stage()); 
     	telaeditar.iniciarTelaDois("view/EditarConsultaCliente.fxml");
     	}
+    	conecta.desconecta();
     }
 
     @FXML

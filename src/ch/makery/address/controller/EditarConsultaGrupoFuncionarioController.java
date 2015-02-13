@@ -1,6 +1,5 @@
 package ch.makery.address.controller;
 
-
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -8,7 +7,6 @@ import java.util.ResourceBundle;
 
 import ch.makery.address.util.ConectaBanco;
 import ch.makery.address.util.VerProdutoCadastro;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -38,7 +36,7 @@ public class EditarConsultaGrupoFuncionarioController implements Initializable {
 
     @FXML
     void confirmar(ActionEvent event) {
-    	//idGrupo = ConsultaGrupoFuncionarioController.idGrupo;
+    	idGrupo = ConsultaGrupoFuncionarioController.idGrupo;
 		int id = Integer.valueOf(idGrupo);
     	conecta.conexao();
 		try {

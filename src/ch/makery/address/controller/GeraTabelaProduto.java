@@ -1,11 +1,10 @@
-package ch.makery.address.util;
+package ch.makery.address.controller;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
+
+import ch.makery.address.util.ConectaBanco;
 
 import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Font.FontFamily;
 import com.itextpdf.text.Image;
@@ -16,20 +15,14 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
 import java.io.*;
-import java.net.MalformedURLException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 
 public class GeraTabelaProduto { 
 	public static void main(String[] arg) throws Exception {
-		
-		VerPdfProduto()	;
-		
-	}	
-	public static void VerPdfProduto() throws DocumentException, MalformedURLException, IOException, SQLException{
 		ConectaBanco conecta = new ConectaBanco();
-				
+		
+		
 		
 		Document doc = new Document();
 		OutputStream os = new FileOutputStream("Produto Relatorio.pdf");
@@ -127,18 +120,13 @@ public class GeraTabelaProduto {
 		
         ArrayList<String> list = new ArrayList<String>();
         while(conecta.rs.next()) {
-        	try {
-				list.add(conecta.rs.getString("id_produto"));
-				list.add(conecta.rs.getString("nome_produto"));
-	        	list.add(conecta.rs.getString("preco_compra"));
-	        	list.add(conecta.rs.getString("preco_venda"));
-	        	list.add(conecta.rs.getString("quantidade_produto"));
-	        	list.add(conecta.rs.getString("outros_produto"));
-	        	list.add(conecta.rs.getString("descricao_produto"));
-        	}
-        	 catch (Exception e) {
- 				// TODO Auto-generated catch block
- 				e.printStackTrace();
+        	list.add(conecta.rs.getString("id_produto"));
+        	list.add(conecta.rs.getString("nome_produto"));
+        	list.add(conecta.rs.getString("preco_compra"));
+        	list.add(conecta.rs.getString("preco_venda"));
+        	list.add(conecta.rs.getString("quantidade_produto"));
+        	list.add(conecta.rs.getString("outros_produto"));
+        	list.add(conecta.rs.getString("descricao_produto"));
         }
  
         for (String s : list) {
@@ -148,7 +136,6 @@ public class GeraTabelaProduto {
         doc.add(table);
  
         doc.close();
-        }
-        }
+    }
 
 }

@@ -88,10 +88,7 @@ public class CadastroPodutoController implements Initializable {
     	 File caminho = fileChooser.showOpenDialog(main.stage);
     	 System.out.println(Main.class.getResource(String.valueOf(caminho)));
     	 if (caminho != null) {
-    		
-    	 	 
     	 }
-    	 
     }
 
     @FXML
@@ -128,6 +125,7 @@ public class CadastroPodutoController implements Initializable {
     	txtQuantidade.setText("");
     	txtOutros.setText("");
     	txtDescricaoVendas.setText("");
+    	conecta.desconecta();
     }
 
     @FXML

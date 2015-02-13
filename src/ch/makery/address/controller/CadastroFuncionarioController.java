@@ -182,6 +182,7 @@ public class CadastroFuncionarioController implements Initializable{
     	gruposSugestoes.clear();
     	gruposAceitos.clear();
     	initialize(null, null);
+    	conecta.desconecta();
     }
 
     @FXML
@@ -213,6 +214,7 @@ public class CadastroFuncionarioController implements Initializable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    	conecta.desconecta();
 		
 	}
 

@@ -1,14 +1,7 @@
 package ch.makery.address.controller;
 
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.sql.SQLException;
-
-import com.itextpdf.text.DocumentException;
-
 import ch.makery.address.Main;
-import ch.makery.address.util.GeraTabelaProduto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -17,7 +10,6 @@ import javafx.scene.control.TitledPane;
 public class AcordionController {
 	
 	Main main = new Main();
-	GeraTabelaProduto geraTabela =  new GeraTabelaProduto();
 
     @FXML
     private TitledPane buttomConsulta;
@@ -174,8 +166,8 @@ public class AcordionController {
     }
 
     @FXML
-    void estoqueRelatorio(ActionEvent event) throws MalformedURLException, DocumentException, IOException, SQLException {
-    	geraTabela.VerPdfProduto();
+    void estoqueRelatorio(ActionEvent event) {
+    	main.iniciaTelas("view/DataInicialFinal.fxml");
 
     }
 
