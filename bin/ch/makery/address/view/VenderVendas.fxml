@@ -174,9 +174,9 @@
                         <Insets left="20.0" right="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="txtDataVenda" GridPane.columnIndex="2">
+                  <TextField fx:id="txtDataVenda" editable="false" prefHeight="22.0" prefWidth="69.0" GridPane.columnIndex="2">
                      <GridPane.margin>
-                        <Insets right="100.0" />
+                        <Insets right="143.0" />
                      </GridPane.margin>
                   </TextField>
                </children>

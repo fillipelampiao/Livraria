@@ -1,16 +1,18 @@
 package ch.makery.address.controller;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-
 import java.io.*;
+import java.net.MalformedURLException;
+import java.sql.SQLException;
+
+import com.itextpdf.text.DocumentException;
 
 import ch.makery.address.Main;
+import ch.makery.address.util.GeraTabelaProduto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class RelatorioController {
-	
+	GeraTabelaProduto gera = new GeraTabelaProduto();
 	Main main = new Main();
 
     @FXML
@@ -28,8 +30,9 @@ public class RelatorioController {
     }
 
     @FXML
-    void Estoque(ActionEvent event) throws FileNotFoundException {
-    	main.iniciaTelas("view/DataInicialFinal.fxml");
+    void Estoque(ActionEvent event) throws MalformedURLException, DocumentException, SQLException, IOException {
+     	gera.geraPdf();
+    	gera.chamaCaminho();
     }
 
     @FXML

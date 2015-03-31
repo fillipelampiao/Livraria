@@ -3,6 +3,9 @@ package ch.makery.address.controller;
 
 
 import java.net.URL;
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
@@ -28,6 +31,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class VenderVenderController implements Initializable {
 
+	DateFormat formataData; 	
 	Main main = new Main();
 	Produtos produtos;
 	ConectaBanco conecta = new ConectaBanco();
@@ -165,6 +169,15 @@ public class VenderVenderController implements Initializable {
    		txtNome.setText(nome);
    		txtDispEstoque.setText(quantEstoque);
    		txtCodProduto.setText(idProdutos);
-   		}
+   		
+   		Calendar c = Calendar.getInstance();
+		formataData = DateFormat.getDateInstance();
+		Date data = c.getTime();
+		txtDataVenda.setText(formataData.format(data));
+
+
+
+
+    }
 
 }

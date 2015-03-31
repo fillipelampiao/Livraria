@@ -2,9 +2,14 @@ package ch.makery.address;
 
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.sql.SQLException;
+
+import com.itextpdf.text.DocumentException;
 
 import ch.makery.address.Main;
 import ch.makery.address.util.ConectaBanco;
+import ch.makery.address.util.GeraTabelaProduto;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,19 +21,20 @@ public class Main extends Application {
 	ConectaBanco conecta = new ConectaBanco();
 	static BorderPane borde;
 	public static Stage stage;
+	GeraTabelaProduto gera = new GeraTabelaProduto();
 	
 	private String primaria = "view/Acordion.fxml";
 	private String secundaria = "view/Inicia.fxml";
 	
 	@Override
-	public void start(Stage stage) {
+	public void start(Stage stage) throws MalformedURLException, DocumentException, SQLException, IOException {
 		this.stage = stage;
 		conecta.conexao();
 		
 		iniciaAcordion(primaria);
 		
 		iniciaTelas(secundaria);
-		
+		gera.geraPdf();
 		
 	}
 	//Inicia tela acordion 

@@ -1,13 +1,26 @@
 package ch.makery.address.controller;
 
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.sql.SQLException;
+
+import com.itextpdf.text.DocumentException;
+
 import ch.makery.address.Main;
+import ch.makery.address.util.GeraTabelaProduto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
 
 public class AcordionController {
+	
+	GeraTabelaProduto gera = new GeraTabelaProduto();
 	
 	Main main = new Main();
 
@@ -166,9 +179,9 @@ public class AcordionController {
     }
 
     @FXML
-    void estoqueRelatorio(ActionEvent event) {
-    	main.iniciaTelas("view/DataInicialFinal.fxml");
-
+    void estoqueRelatorio(ActionEvent event) throws MalformedURLException, DocumentException, SQLException, IOException {
+    	gera.geraPdf();
+    	gera.chamaCaminho();
     }
 
     @FXML
