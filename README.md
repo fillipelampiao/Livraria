@@ -1,4 +1,3 @@
 # Livraria
-Primeiro commit
 
-Projeto para desenvolvimento ERP em Java.
+Projeto para desenvolvimento de um sistema ERP em Java.
